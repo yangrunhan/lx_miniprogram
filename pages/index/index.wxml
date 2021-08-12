@@ -1,0 +1,61 @@
+<!--index.wxml-->
+
+
+<view class="exam">
+  <view class="exam_title">请选择省份</view>
+  <view class="exam_btn">
+    <!-- <button bindtap="ChooseKaoshi" data-entrance='yn'>云南</button> -->
+    <!-- <button bindtap="ChooseKaoshi" data-entrance='hb'>河北</button> -->
+    <button bindtap="ChooseKaoshi" data-entrance='zylx'>中央遴选</button>
+    <button bindtap="ChooseKaoshi" data-entrance='xz'>西藏</button>
+    <button bindtap="ChooseKaoshi" data-entrance='js'>江苏</button>
+    <button bindtap="ChooseKaoshi" data-entrance='gd'>广东</button>
+    <button bindtap="ChooseKaoshi" data-entrance='jx'>江西</button>
+    <button bindtap="ChooseKaoshi" data-entrance='yn'>云南</button>
+    <button bindtap="ChooseKaoshi" data-entrance='fj'>福建</button>
+    <button bindtap="ChooseKaoshi" data-entrance='gs'>甘肃</button>
+    <button bindtap="ChooseKaoshi" data-entrance='gx'>广西</button>
+    <button bindtap="ChooseKaoshi" data-entrance='he'>河南</button>
+    <button bindtap="ChooseKaoshi" data-entrance='hi'>海南</button>
+    <button bindtap="ChooseKaoshi" data-entrance='jl'>吉林</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sh'>上海</button>
+    <button bindtap="ChooseKaoshi" data-entrance='ah'>安徽</button>
+    <button bindtap="ChooseKaoshi" data-entrance='hn'>湖南</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sd'>山东</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sc'>四川</button>
+    <button bindtap="ChooseKaoshi" data-entrance='hu'>湖北</button>
+    <button bindtap="ChooseKaoshi" data-entrance='gz'>贵州</button>
+    <button bindtap="ChooseKaoshi" data-entrance='bj'>北京</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sx'>山西</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sa'>陕西</button>
+    
+  </view>
+	<!-- <view class="province_exam" bindtap="toNextPage" data-entrance="0"></view>
+	<view class="nationwide_exam" bindtap="toNextPage" data-entrance="1"></view> -->
+</view>
+
+<!-- 登录授权 模态框 -->
+<loginAuthModal isHiddenLoginAuthModal='{{isHiddenLoginAuthModal}}' bindAllowAuth="AllowAuth" />
+
+<!-- 手机号授权 模态框 -->
+<view class="phone_auth_modal" hidden="{{isHiddenPhoneAuthModal}}">
+	<view class="modal_ctn">
+		<view class="title">为了更好的为您服务，请绑定手机号码</view>
+		<view class="btn_ctn">
+			<button bindtap="cancelBindPhone" class="no_bind">暂不绑定</button>
+			<button open-type="getPhoneNumber" bindgetphonenumber="processBindPhone" class="bind_now">立即绑定</button>
+		</view>
+	</view>
+</view>
+<!-- 登录框 -->
+<view class="login_modal" wx:if="{{isShowLoginModal}}">
+	<form bindsubmit="loginSubmit" class="card">
+		<view class="card_row">
+			<view class="card_row_title">手机号</view>
+			<input class="phone" name="phone" value="{{userPhone}}" bindinput='changePhone' type="number" />
+		</view>
+		<view class="card_row">
+			<button class="login_btn" formType="submit">确定</button>
+		</view>
+	</form>
+</view>

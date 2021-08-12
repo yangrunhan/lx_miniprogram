@@ -1,0 +1,36 @@
+<!--pages/zwpp/zwpp.wxml-->
+<view>
+	<view class="top">
+		<view class="top_title_1">河北省秦皇岛市直遴选</view>
+		<view class="top_title_2">职位匹配查询</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			
+			<!-- 选择单位 -->
+			<picker name="danwei" bindchange="danweiChange" range="{{danweiArr}}" value="{{danweiIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{danweiArr[danweiIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+			<!-- 选择岗位 -->
+			<picker name="gangwei" bindchange="gangweiChange" range="{{gangweiArr}}" value="{{gangweiIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{gangweiArr[gangweiIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+			
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+</view>	

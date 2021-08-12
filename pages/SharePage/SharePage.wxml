@@ -1,0 +1,65 @@
+<!--pages/SharePage/SharePage.wxml-->
+<button  wx:if="{{!userPhone}}" open-type="getPhoneNumber"  class="shouquan" bindgetphonenumber="getphonenumber"></button>
+<view class="main">
+  <view class="title">{{page_data.title}}</view>
+  <view class="page_img"><image src="{{page_data.show_img}}"/></view>
+  <view class="kefu">
+    <view class="info">
+      <view class="info_logo">
+        <image src="{{page_data.kefu.logo}}" mode="widthFix"/>
+      </view>
+      <view class="info_t">
+        <view><text class="name">{{page_data.kefu.name}}</text></view>
+        <view><text class="jieshao">{{page_data.kefu.jieshao}}</text></view>
+      </view>
+    </view>
+    <view class="share tag" bindtap="ShareBtnClick">
+      <image src="http://www.zgxds.cn/zt/xiaochengxu/images/share.png"/>
+      <text>转发</text>
+    </view>
+    <view class="addwx tag" bindtap="WxBtnClick">
+      <image src="http://www.zgxds.cn/zt/xiaochengxu/images/weixin.png"/>
+      <text>加微信</text>
+    </view>
+    <view wx:if="{{page_data.kefu.phone.num != ''}}" class="call tag" bindtap="CallBtnClick">
+      <image src="http://www.zgxds.cn/zt/xiaochengxu/images/phone.png"/>
+      <text>打电话</text>
+    </view>
+  </view>
+  <view class="open">
+    <button bindtap="showPage">点击进入</button>
+  </view>
+</view>
+<view class="modals modals-bottom-dialog" id="modals-bottom-dialog" hidden="{{mbdhidden}}">
+  <view class="bottom-dialog-body bottom-pos">
+    <block wx:for="{{mdb_data}}" wx:key="item">
+      <view wx:if="{{item.type == 'button'}}">
+        <button id="btmd_btn" style="line-height:140rpx;padding:0" open-type="{{item.open_type ? item.open_type : ''}}" bindtap="{{item.bindtap ? item.bindtap : ''}}">{{item.name}}</button>
+      </view>
+      <view wx:elif="{{item.type == 'view'}}">
+        <view class="btmd_btn" open-type="{{item.open_type}}" bindtap="{{item.bindtap}}">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="modals-cancel" bindtap="hideModal">取消</view>
+</view>
+
+<view class="wxh_tc_dialog" hidden="{{wxhdhidden}}">
+  <view class="wx_content">
+    <image src="{{page_data.kefu.weixin.ewm}}"></image>
+    
+    <button wx:if="{{!isAuthSavePhone}}" bindtap="onSaveToPhone" style="width:540rpx">点击保存图片微信扫码</button>
+    <button wx:else bindtap="showSaveAuthModel" style="width:540rpx">点击保存图片微信扫码</button>
+    <view><text class="wxh_text">微信号：{{page_data.kefu.weixin.wxh}}</text></view>
+    <button style="width:540rpx" bindtap="PasteWxh">点击复制微信号</button>
+    <view class="wxh_close_btn" bindtap="WxhTcCloseBtnClick"><image src="https://www.zgxds.cn/zt/xiaochengxu/images/close_btn.png"></image></view>
+  </view>
+</view>
+
+<view class="wx_login_mod" wx:if="{{telregister_isshow}}">
+  <view class="wx_login_close" catchtap="closetelregister">暂不注册</view>
+  <form bindsubmit="registerPhone">
+    <input name='userphone' color="#ffffff" bindinput="userphoneInput" class="section" placeholder='请填写手机号'></input>
+    <button  class="btn" form-type="submit">立即注册</button>
+  </form>
+</view>

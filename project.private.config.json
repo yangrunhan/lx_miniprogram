@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/bmrs/bmrs",
+          "pathName": "pages/bmrs/bmrs",
+          "query": "actid=41140",
+          "scene": null
+        },
+        {
+          "name": "pages/home/hu/husz/home",
+          "pathName": "pages/home/hu/husz/home",
+          "query": "city_or_school=qiqihaer&scode=hanhan",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<!--pages/kaoshi/hu/hu.wxml-->
+<view class="kaoshi">
+  <view class="title">请选择考试</view>
+  <view>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='husz'>湖北省直机关遴选</button>
+  </view>
+</view>
+
+

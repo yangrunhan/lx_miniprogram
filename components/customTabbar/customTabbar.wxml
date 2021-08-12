@@ -1,0 +1,55 @@
+<!--components/customTabbar/customTabbar.wxml-->
+
+<!-- <view class="tabbar_box {{isIphoneX?'iphoneX-height':''}}" style="background-color:{{tabbar.backgroundColor}}"> -->
+<view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}">
+	<block wx:for="{{tabbar.list}}" wx:key="index">
+		<view class='contact_ctn' wx:if="{{item.isSpecial}}">
+			<view class="contact_btn_outer" bindtap='onMyButtonTap'>
+				<view class="contact_btn_shadow"></view>
+				<!-- <button class="contact_btn" hover-class="none" open-type="contact"></button> -->
+				<button class="contact_btn" hover-class="none"></button>
+			</view>
+		</view>
+		<navigator wx:else class="tabbar_nav" hover-class="none" url="{{item.pagePath}}"
+			style="color:{{item.selected ? '#567bf3' : tabbar.color}}" open-type="switchTab">
+			<image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}" mode="scaleToFill" />
+			<text>{{item.text}}</text>
+		</navigator>
+	</block>
+</view>
+
+<view class="window-alert" wx:if="{{zixun_isshow}}">
+	<view class="zixun_alert">
+		<view class="zixun_alert_close" bindtap="close_zixun"></view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539671035312'>上海</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1553130891521'>山东</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968767885'>江苏</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968311434'>浙江</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968192225'>安徽</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540970502513'>江西</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536732409247'>福建</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968693004'>广东</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539670088092'>广西</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539161565354'>海南</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536732545828'>北京</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536811093854'>天津</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539670153013'>河北</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539670672849'>山西</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1537335224866'>内蒙古</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539671070812'>湖南</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539683455221'>湖北</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539669591595'>河南</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536906366196'>重庆</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536732657986'>四川</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536661433315'>云南</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539161544838'>贵州</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539163310761'>宁夏</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539163290361'>青海</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1539669541476'>甘肃</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968402886'>新疆</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1537942191626'>陕西</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1559201254868'>辽宁</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1536811119251'>吉林</view>
+		<view class="fx_zixun_btn" bindtap="showXn" data-xnid='kf_10353_1540968057431'>黑龙江</view>
+	</view>
+</view>

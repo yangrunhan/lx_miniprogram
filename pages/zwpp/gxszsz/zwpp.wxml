@@ -1,0 +1,43 @@
+<!--pages/zwpp/ahszsz/zwpp.wxml-->
+
+
+<view>
+	<view class="top">
+		<view class="top_title_1">广西区直遴选入面分数线</view>
+		<view class="top_title_2">职位匹配</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			
+			<!-- 选择地市 -->
+			<picker name="year" bindchange="yearChange" range="{{yearArr}}" value="{{yearIndex}}" range-key="city">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{yearArr[yearIndex].city}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+      <!-- 选择城市 -->
+			<picker name="city" bindchange="cityChange" range="{{gangweiArr}}" value="{{gangweiIndex}}" range-key="dw_name">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{gangweiArr[gangweiIndex].dw_name}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+</view>
+
+
+
+
+

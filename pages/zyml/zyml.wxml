@@ -1,0 +1,66 @@
+<!-- 专业目录查询  pages/zyml/zyml.wxml -->
+
+<view>
+	<view class="top">
+		<view class="top_title_1">湖南省公务员考试</view>
+		<view class="top_title_2">专业目录查询</view>
+		<view class="progress"></view>
+	</view>
+	<!-- 表单 -->
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			<!-- 最低学历 -->
+			<view class="section" bindtap="hiddenDrawerToggle" data-status="open">
+				<view class="section_icon_1"></view>
+				<view name="xueli" class="picker">{{xueli == '' ? '最低学历' : xueli}}</view>
+				<view class="arrow"></view>
+			</view>
+			<!-- 请输入专业 -->
+			<view class="section">
+				<view class="section_icon_2"></view>
+				<input name="zhuanye" class="discipline" placeholder="请输入专业" />
+			</view>
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+	<!-- 查询结果 -->
+	<view class="queryResults" wx:if="{{searchResult.length > 0}}">
+		<view class="title">查询结果</view>
+		<view class="list">
+			<view class="item" wx:for="{{searchResult}}" wx:key="index">
+				<view class="row">
+					<view class="col icon_1">
+						学历：{{item.xueli}}
+					</view>
+				</view>
+				<view class="row">
+					<view class="col icon_2">
+						专业大类：{{item.zydl}}
+					</view>
+				</view>
+				<view class="row">
+					<view class="col icon_2">
+						专业小类：{{item.zyxl}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 广告位 -->
+	<view class="ads" wx:if="{{ads.length > 0}}" style="{{!searchResult.length > 0 ? 'margin-top: 100rpx;' : 'margin-top:0;'}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+<!-- 下拉菜单 -->
+<view class="drawerModal" hidden="{{isHiddenDrawer}}">
+	<view bindtap="hiddenDrawerToggle" data-status="close" class="mask"></view>
+	<scroll-view class="drawer" animation="{{animationData}}" scroll-y>
+		<view bindtap='getOption' wx:for="{{xueliArr}}" wx:key="index" data-value="{{item}}" class="drawer_item {{xueli==item ?'on':''}}">
+			{{item}}
+		</view>
+	</scroll-view>
+</view>

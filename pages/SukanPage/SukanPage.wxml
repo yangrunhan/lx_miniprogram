@@ -1,0 +1,13 @@
+<!--pages/SukanPage/SukanPage.wxml-->
+<view class="sukan_mod">
+  <image class="sukan_img" src="{{ img_src }}" mode="aspectFit" style="width:{{ width }};height:{{ height }};"></image>
+  <button wx:if="{{ is_phone }}" class="sukan_btn" data-link="{{ link }}" bindtap="showView">{{ btn_text }}</button>
+  <button wx:else class="sukan_btn" open-type="getPhoneNumber" bindgetphonenumber="getphonenumber">{{ btn_text }}</button>
+</view>
+<view class="wx_login_mod" wx:if="{{telregister_isshow}}">
+  <view class="wx_login_close" catchtap="closetelregister">暂不注册</view>
+  <form bindsubmit="registerPhone">
+    <input name='userphone' color="#ffffff" bindinput="userphoneInput" class="section" placeholder='请填写手机号'></input>
+    <button  class="btn" form-type="submit">立即注册</button>
+  </form>
+</view>

@@ -1,0 +1,77 @@
+<!--pages/bmrsDetail/bmrsDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到{{ks_name}}中</text>
+		<text class="text_1">符合条件的职位报名情况</text>
+	</view>
+
+	<view class="list">
+  
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+      <!-- 设置两套方案 一套是设置了显示数据的，一套是没有 -->
+			<view wx:if="{{ item_data.length > 0 }}">
+				<view wx:for="{{item_data}}" wx:key="index2" wx:for-item="item2" >
+					<view wx:if="{{ item2.length == 1 && tool.indexOf(item2[0][1],'zhuanye') == -1}}">
+						<view class="zhiwei_name">{{item[item2[0][1]]}}</view>
+					</view>
+					<view wx:elif="{{ item2.length == 2 }}">
+						<view class="item_row">
+							<view class="flex_a_c">{{ item2[0][0] }}: {{item[item2[0][1]]}}</view>
+							<view class="flex_a_c">{{ item2[1][0] }}: {{item[item2[1][1]]}}</view>
+						</view>
+					</view>
+					<view wx:elif="{{ item2.length == 1 && tool.indexOf(item2[0][1],'zhuanye') != -1}}">
+						<view class="flex_a_c">{{ item2[0][0] }} : {{item[item2[0][1]]}}</view>
+					</view>
+
+				</view>
+      </view>
+      
+      <view wx:else>
+        <view class="bumen_name">{{item.dw_name}}</view>
+        <view class="zhiwei_name">{{item.zw_name}}</view>
+        <view class="zhiwei_name">{{item.zw_code}}</view>
+        <view class="bmrs" wx:if="{{item.dw_type}}">单位性质：{{item.dw_type}}</view>
+        <view class="item_row">
+          <view class="flex_a_c zgzs">计划人数:{{item.jhs}}</view>
+          <view class="flex_a_c zgzs">学历：{{item.xueli}}</view>
+        </view>
+        <view class="item_row" wx:if="{{item.bmrs}}">
+          <view class="flex_a_c zgzs">报名人数：{{item.bmrs}}</view>
+        </view>
+        <view class="item_row" wx:if="{{item.jingzhengbi}}">
+          <view class="flex_a_c zgzs">竞争比：{{item.jingzhengbi}}</view>
+        </view>
+        <view class="item_row">
+          <view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
+        </view>
+        <view class="item_row" wx:if="{{item.zwjj}}">
+          <view class="flex_a_c zgzs">专门面向选调生遴选职位：{{item.forxds}}</view>
+        </view>
+        <view class="item_row" wx:if="{{item.zgtj}}">
+          <view class="flex_a_c zgzs">进面最高分：{{item.max}}</view>
+        </view>
+        <view class="item_row" wx:if="{{item.qtyq}}">
+          <view class="flex_a_c zgzs">进面最低分：{{item.min}}</view>
+        </view>
+      </view>
+
+
+
+
+
+
+			
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+
+
+

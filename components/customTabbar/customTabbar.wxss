@@ -1,0 +1,142 @@
+/* components/customTabbar/customTabbar.wxss */
+
+.tabbar_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100rpx;
+  box-shadow: 0rpx -8rpx 18rpx 0rpx rgba(107, 141, 221, 0.13);
+}
+
+
+.tabbar_box .iphoneX-height {
+  padding-bottom: 66rpx;
+}
+
+.tabbar_nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rpx;
+  height: 100%;
+  position: relative;
+}
+
+.tabbar_icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin-bottom: 11rpx;
+}
+
+
+/* 客服按钮 */
+.contact_ctn {
+  /* display: flex; */
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background-color: transparent;
+}
+
+.contact_ctn .contact_btn_outer,
+.contact_ctn .contact_btn_shadow {
+  position: absolute;
+  width: 164rpx;
+  height: 164rpx;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.contact_ctn .contact_btn_outer {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  top: -82rpx;
+}
+
+.contact_ctn .contact_btn_shadow {
+  top: 0;
+  bottom: 0;
+  background-color: rgba(86, 123, 243, 0.129);
+  animation: scale 1500ms ease-in-out alternate infinite;
+  -webkit-animation: scale 1500ms ease-in-out alternate infinite;
+}
+
+.contact_ctn .contact_btn_outer .contact_btn {
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  background: url(http://www.zglinxuan.com/statics/images/icons/contact.png) no-repeat center #567bf3;
+  background-size: 50rpx auto;
+}
+
+@-webkit-keyframes scale {
+  0% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.window-alert{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.zixun_alert{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+  width: 600rpx;
+  height: 820rpx;
+  white-space: nowrap;
+}
+
+.zixun_alert .zixun_alert_close{
+  position: absolute;
+  top: -25rpx;
+  right: -25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background: url(http://www.zglinxuan.com/statics/images/icons/hb_close.png) center no-repeat;
+  background-size: 100% 100%;
+  background-color: #FFF;
+}
+
+.zixun_alert .fx_zixun_btn{
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  background: #FFF;
+  line-height: 60rpx;
+  color: #000;
+  border-radius: 30rpx;
+  margin: 8rpx;
+  font-size: 32rpx;
+}

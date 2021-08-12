@@ -1,0 +1,54 @@
+<!--pages/zwpp/ahszsz/zwpp.wxml-->
+
+
+<view>
+	<view class="top">
+		<view class="top_title_1">江西省直遴选职位检索</view>
+		<view class="top_title_2">职位匹配</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			
+			<!-- 选择年份 -->
+			<picker name="year" bindchange="yearChange" range="{{yearArr}}" value="{{yearIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{yearArr[yearIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+      <!-- 选择城市 -->
+			<picker name="city" bindchange="cityChange" range="{{cityArr}}" value="{{cityIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{cityArr[cityIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+      <!-- 选择学历 -->
+			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{xueliArr[xueliIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+			
+			<input name='zhuanye' bindinput="zhuanyeInput" class="section" placeholder='*不限专业可不填写'></input>
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+</view>	
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!--pages/zwppDetail/gssz/zwppDetail.wxml-->
+<!--pages/zwppDetail/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到福建省省直机关遴选中符合条件的</text>
+		<text class="text_1">职位，点击查看详情了解更多该职位信息</text>
+		<!-- <text class="text_2">（注：其中公安及法检职位需进行专业知识考试，</text>
+		<text class="text_2">公安职位需通过体能测试。）</text> -->
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="bumen_name">{{item.item02}}</view>
+			<view class="zhiwei_name">{{item.item04}}</view>
+			<view class="bmrs" wx:if="{{item.item06}}">招聘人数{{item.item06}}</view>
+			<view class="item_row">
+				<view class="flex_a_c city">学历：{{item.item09}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">专业：{{item.item10}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">政治面貌：{{item.item07}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">其他要求：{{item.item11}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">备注：{{item.item12}}</view>
+			</view>
+      <!-- <view class="item_row">
+				<view class="flex_a_c zgzs">是否进行职位业务水平测试：{{item.item14}}</view>
+			</view> -->
+      
+      <!-- 
+			<view class="item_row">
+				<view class="flex_a_c zgnlyq">最高年龄：{{item.zgnlyq}}</view>
+				<view class="flex_a_c zgzs">职业资格证：{{item.zgzs}}</view>
+			</view>
+
+			<view class="hidden_ctn" hidden="{{!item.isOpen}}">
+				<view class="item_row">
+					<view class="flex_a_c jcgznx">基层工作年限：{{item.jcgznx}}</view>
+				</view>
+				<view class="item_row">
+					<view class="flex_a_c hjhsxmyq">户籍或“四项目”服务地要求：{{item.hjhsxmyq}}</view>
+				</view>
+				<view class="item_row">
+					<view class="flex_a_c qtyq">其他要求：{{item.qtyq}}</view>
+					<view class="flex_a_c rmfs" wx:if="{{!item.rmfs == ''}}">
+						分数线：
+						<text class="fraction">{{item.rmfs}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="open" bindtap="openSwitch" data-id="{{item.id}}">
+				<view class="unfold {{item.isOpen?'':'packup'}}"></view>
+			</view> -->
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

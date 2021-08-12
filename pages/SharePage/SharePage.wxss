@@ -1,0 +1,248 @@
+/* pages/SharePage/SharePage.wxss */
+
+page{
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 100%;
+  background-color: #574f86;
+  padding:40rpx 0;
+  box-sizing: border-box;
+}
+
+.main .title{
+  width: 92%;
+  margin: 0 auto;
+  font-size: 50rpx;
+  color: #ffffff;
+  margin-bottom: 50rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.main .page_img{
+  width: 92%;
+  margin: 0 auto;
+  margin-bottom: 50rpx;
+  border-radius: 20rpx;
+  box-shadow: 4rpx 6rpx 20rpx 4rpx #ffffff57;
+}
+
+.main .page_img image{
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.main .kefu{
+  width: 92%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+  display: flex;
+}
+
+.main .kefu .info{
+  width: 250rpx;
+  display: flex;
+  margin-right: 16rpx;
+}
+.info_logo{
+  width: 70rpx;
+  margin-right: 16rpx;
+}
+.info_logo image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.info_t{
+  font-size: 10px;
+}
+
+.info_t .jieshao{
+  color:rgb(255, 0, 0);
+}
+.main .kefu .tag{
+  width: 120rpx;
+  height: 82rpx;
+  text-align: center;
+  position: relative;
+  margin-top: -8rpx;
+}
+.main .kefu .tag image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.main .kefu .tag text{
+  display: block;
+  font-size: 24rpx;
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+}
+
+.main .open{
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+
+.main .open button{
+  display: block;
+  width: 100%;
+  background-color: #fc664c;
+  color:#ffffff;
+}
+
+.modals{
+  background-color: #ececec;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.modals-bottom-dialog{
+  width: 100%;
+  position: fixed;
+  bottom: 0; 
+}
+.bottom-dialog-body{
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.bottom-dialog-body .btmd_btn{
+  width: 100%;
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx !important;
+  border-bottom: 1px dotted #d6d6d6;
+  background-color: #ffffff;
+}
+.bottom-dialog-body #btmd_btn{
+  width: 100%;
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx !important;
+  border-bottom: 1px dotted #d6d6d6;
+  background-color: #ffffff;
+}
+
+.modals .modals-cancel{
+  text-align: center;
+  height: 140rpx;
+  line-height: 140rpx;
+  margin-top: 30rpx;
+  background-color: #ffffff;
+}
+
+.wxh_tc_dialog{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.573);
+}
+
+
+.wxh_tc_dialog .wx_content{
+  width: 100%;
+  margin:0 auto;
+  text-align: center;
+  height: 746rpx;
+  margin-top:140rpx;
+}
+
+.wxh_tc_dialog .wx_content image{
+  width: 380rpx;
+  height: 380rpx;
+}
+
+.wxh_tc_dialog .wx_content button{
+  background-color: #f3362f;
+  color:#ffffff;
+  font-weight: normal;
+  margin: 18rpx auto;
+}
+.wxh_tc_dialog .wx_content .wxh_text{
+  font-size: 54rpx;
+  color: #ffffff;
+  font-weight: bolder;
+  margin-top: 60rpx;
+  display: block;
+}
+
+.wxh_tc_dialog .wxh_close_btn{
+  width: 100rpx;
+  margin: 0 auto;
+}
+
+.wxh_tc_dialog .wxh_close_btn image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+/* 授权按钮的 弹窗样式 */
+
+.shouquan{
+  position: fixed;
+  top: 70rpx;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  height: 100%;
+  background: none;
+  width: 100% !important;
+}
+
+
+.wx_login_mod{
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.40);
+  width: 100%;
+  height: 322rpx;
+  padding-top: 60rpx;
+  z-index: 9999;
+
+}
+.wx_login_mod .info{
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+  font-size: 40rpx;
+
+}
+.wx_login_mod .btn{
+  display: block;
+  box-sizing: border-box;
+  width: 80%;
+  margin-top: 40rpx;
+  background: #ff4646;
+  color: #ffffff;
+}
+
+.wx_login_mod .wx_login_close{
+  
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  right: 20rpx;
+  bottom: 270rpx;
+  color: #ffffff;
+}
+
+.wx_login_mod input.section{
+  text-align: center;
+  color:#ffffff
+}

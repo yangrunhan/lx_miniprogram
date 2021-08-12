@@ -1,0 +1,25 @@
+/* pages/kaoshi/hb/hb.wxss */
+
+
+.kaoshi{
+  margin: 0 auto;
+  /* margin: 50rpx auto 0;
+  display: flex;
+  justify-content: space-between; */
+  width: 670rpx;
+  height: 231rpx;
+}
+
+.kaoshi .title{
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+
+
+.kaoshi button{
+  
+  margin: 30rpx auto;
+  color: #4eb9f7;
+  border-radius: 20rpx; 
+}

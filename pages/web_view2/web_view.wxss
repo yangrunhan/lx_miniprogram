@@ -1,0 +1,26 @@
+/* pages/web_view/web_view.wxss */
+
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.tz_info{
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.tz_info1{
+  margin-top: 150rpx;
+  margin-bottom: 20rpx;
+}
+
+.tz_info2{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.tz_link{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  text-align: center;
+}

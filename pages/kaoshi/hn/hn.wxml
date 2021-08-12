@@ -1,0 +1,11 @@
+<!--pages/kaoshi/hn/hn.wxml-->
+<!--pages/kaoshi/sd/sd.wxml-->
+<view class="kaoshi">
+  <view class="title">请选择考试</view>
+  <view>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='hnsz'>湖南省直遴选</button>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='hncssz'>湖南长沙市直遴选</button>
+  </view>
+</view>
+
+

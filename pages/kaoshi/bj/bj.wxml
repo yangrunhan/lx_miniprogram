@@ -1,0 +1,9 @@
+<!--pages/kaoshi/bj/bj.wxml-->
+<view class="kaoshi">
+  <view class="title">请选择考试</view>
+  <view>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='bjsz'>北京市市级机关遴选</button>
+  </view>
+</view>
+
+

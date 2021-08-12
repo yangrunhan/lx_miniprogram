@@ -1,0 +1,17 @@
+<!--components/loginAuth_modal/loginAuth_modal.wxml-->
+
+<view class="modal" hidden="{{isHiddenLoginAuthModal}}">
+	<view class="modal_ctn">
+		<view class="modal_ctn_t">
+			<!-- <image class="default_avatar" src="http://hn.offcn.com/zg/pocket/images/touxiang3.png"></image> -->
+			<view class="modal_title">微信登录</view>
+		</view>
+		<view class="modal_ctn_c">
+			<view>请授权登录遴选报考下助手</view>
+			<view>为您提供各项公考服务</view>
+		</view>
+		<!-- <button class="btn_1" open-type="getUserInfo" bindgetuserinfo="_processLogin">允许</button> -->
+		<button class="btn_1" open-type="getUserInfo" bindgetuserinfo="_processLogin">允许</button>
+		<button class="btn_2" bindtap="_cancelLogin">暂不登录</button>
+	</view>
+</view>

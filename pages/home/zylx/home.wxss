@@ -1,0 +1,250 @@
+/* pages/home/zylx/home.wxss */
+
+.layout {
+  padding-bottom: 150rpx;
+}
+
+.toIndex {
+  margin: 60rpx 0 0 50rpx;
+  width: 42rpx;
+  height: 42rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/toIndex.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.logo {
+  float: right;
+  margin: 27rpx 17rpx 0 0;
+  width: 215rpx;
+  height: 48rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/logo.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.app_title {
+  margin-top: 39rpx;
+  float: left;
+  width: 100%;
+  font-size: 58rpx;
+  line-height: 1;
+  color: #131336;
+  text-align: center;
+}
+
+.main {
+  clear: both;
+  width: 671rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.match,
+.match,
+.match {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+}
+
+/* 职位匹配 */
+.match {
+  padding: 84rpx 0 0 32rpx;
+  margin-top: 13rpx;
+  width: 100%;
+  height: 252rpx;
+  line-height: 1;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.match .zwjs_title{
+  line-height: 30rpx;
+}
+.match .zwjs_name{
+  margin-top:14rpx;
+  line-height: 30rpx;
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+
+/* 往年入面分数线 + 专业目录 + 晒分  查询 */
+.inquiry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inquiry .inquiry_item {
+  margin-top: 37rpx;
+  width: 321rpx;
+  height: 190rpx;
+  border-radius: 16rpx;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  background-color: #fff;
+}
+
+
+/* 广告 */
+.ads {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ads_item {
+  margin-top: 37rpx;
+  width: 321rpx;
+  height: 176rpx;
+  border-radius: 16rpx;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  background-color: #fff;
+}
+
+
+.getPhone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+
+/* 手机号授权 */
+.phone_auth_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.phone_auth_modal .modal_ctn {
+  padding: 31rpx 35rpx 41rpx 33rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 500rpx;
+  /* height: 400rpx; */
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.phone_auth_modal .modal_ctn .btn_ctn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone_auth_modal .modal_ctn .btn_ctn .title {
+  font-size: 28rpx;
+}
+
+.phone_auth_modal .modal_ctn .btn_ctn .no_bind,
+.phone_auth_modal .modal_ctn .btn_ctn .bind_now {
+  padding: 0;
+  margin-top: 21rpx;
+  width: 150rpx !important;
+  height: 66rpx;
+  line-height: 66rpx;
+  border-radius: 6rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+}
+
+.phone_auth_modal .modal_ctn .btn_ctn .no_bind {
+  color: #666666;
+  background-color: #dddddd;
+}
+
+.phone_auth_modal .modal_ctn .btn_ctn .bind_now {
+  color: #fff;
+  background-color: #567bf3;
+}
+
+
+/* 登录框 */
+.login_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login_modal .card {
+  font-size: 28rpx;
+  padding: 31rpx 35rpx 21rpx 33rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 500rpx;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.card_row {
+  padding: 20rpx 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.card_row_title {
+  width: 90rpx;
+  margin-right: 20rpx;
+}
+
+.card_row input {
+  padding: 0 8rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.getYzm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #666666;
+  padding: 10rpx;
+  font-size: 28rpx;
+  z-index: 999;
+}
+
+.login_btn {
+  padding: 0;
+  width: 80% !important;
+  height: 66rpx !important;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #567bf3;
+}

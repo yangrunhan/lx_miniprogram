@@ -1,0 +1,47 @@
+<!--pages/home/sa/sasz/home.wxml-->
+
+<view class="layout">
+	<navigator class="toIndex" open-type="reLaunch" url="/pages/index/index" hover-class="none"></navigator>
+
+	<!-- <view class="logo"></view> -->
+	<view class="app_title">
+		<text>陕西省直机关遴选考试</text>
+	</view>
+	<view class="main">
+		<!-- 职位匹配 -->
+		<view class="match" bindtap="toNextpage" data-topage='zwjs' style="background-image: url({{backgroundImage.features_1}});" hover-class="none">
+      <view class='zwjs_title'>陕西省省直机关遴选</view>
+      <view class='zwjs_name'>职位检索</view>
+    </view>
+	</view>
+</view>
+
+<!-- 登录授权 模态框 -->
+<loginAuthModal isHiddenLoginAuthModal='{{isHiddenLoginAuthModal}}' bindAllowAuth="AllowAuth" />
+
+<!-- 手机号授权 模态框 -->
+<view class="phone_auth_modal" hidden="{{isHiddenPhoneAuthModal}}">
+	<view class="modal_ctn">
+		<view class="title">为了更好的为您服务，请绑定手机号码</view>
+		<view class="btn_ctn">
+			<button bindtap="cancelBindPhone" class="no_bind">暂不绑定</button>
+			<button open-type="getPhoneNumber" bindgetphonenumber="processBindPhone" class="bind_now">立即绑定</button>
+		</view>
+	</view>
+</view>
+<!-- 登录框 -->
+<view class="login_modal" wx:if="{{isShowLoginModal}}">
+	<form bindsubmit="loginSubmit" class="card">
+		<view class="card_row">
+			<view class="card_row_title">手机号</view>
+			<input class="phone" name="phone" value="{{userPhone}}" bindinput='changePhone' type="number" />
+		</view>
+		<view class="card_row">
+			<button class="login_btn" formType="submit">确定</button>
+		</view>
+	</form>
+</view>
+<!-- tabbar -->
+<customTabbar tabbar="{{tabbar}}" />
+
+

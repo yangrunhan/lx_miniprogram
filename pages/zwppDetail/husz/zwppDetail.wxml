@@ -1,0 +1,32 @@
+<!--pages/zwppDetail/husz/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到湖北省直机关遴选中符合条件的</text>
+		<text class="text_1">职位，点击查看详情了解更多该职位信息</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="bumen_name">{{item.xddw}}</view>
+			<view class="zhiwei_name">{{item.xdzw}}</view>
+			<view class="bmrs" wx:if="{{item.jhsl}}">招聘人数{{item.jhsl}}</view>
+			<view class="item_row">
+				<view class="flex_a_c gender">学历：{{item.zdxl}}</view>
+				<view class="flex_a_c city">专业：{{item.	zhuanye}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.	qtyq}}">
+				<view class="flex_a_c zgzs">其他条件：{{item.	qtyq}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.zzmm}}">
+				<view class="flex_a_c zgzs">政治面貌	{{item.zzmm}}</view>
+			</view>
+      
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+

@@ -1,0 +1,18 @@
+<!--pages/home/home.wxml-->
+
+<!-- 省考 -->
+<view class="layout">
+	<navigator class="toIndex" open-type="reLaunch" url="/pages/index/index" hover-class="none"></navigator>
+
+	<!-- <view class="logo"></view> -->
+	<view class="app_title">
+		<text>遴选报考小助手</text>
+	</view>
+	<view class="main">
+		<!-- 职位匹配 -->
+		<navigator class="match" url="/pages/zwpp/zwpp" style="background-image: url({{backgroundImage.features_1}});" hover-class="none"></navigator>
+	</view>
+</view>
+
+<!-- tabbar -->
+<customTabbar tabbar="{{tabbar}}" />

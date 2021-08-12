@@ -1,0 +1,41 @@
+<!--pages/kaoshi/ah/ah.wxml-->
+
+<view class="kaoshi">
+  <view class="title">请选择考试</view>
+  <view>
+		<button style="width:100%;" bindtap="toNextPage" data-entrance='ynszlx2'>2021云南下半年省直遴选</button>
+		<button style="width:100%;" bindtap="toNextPage" data-entrance='ynkmszlx'>云南昆明市直遴选</button>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='ynkmgdxz'>2020年云南官渡区入面分数线</button>
+		<button style="width:100%;" bindtap="toNextPage" data-entrance='ynszsz'>云南纪委监委职位检索</button>
+  </view>
+</view>
+
+<!-- 登录授权 模态框 -->
+<loginAuthModal isHiddenLoginAuthModal='{{isHiddenLoginAuthModal}}' bindAllowAuth="AllowAuth" />
+
+
+<!-- 手机号授权 模态框 -->
+<view class="phone_auth_modal" hidden="{{isHiddenPhoneAuthModal}}">
+	<view class="modal_ctn">
+		<view class="title">为了更好的为您服务，请绑定手机号码</view>
+		<view class="btn_ctn">
+			<button bindtap="cancelBindPhone" class="no_bind">暂不绑定</button>
+			<button open-type="getPhoneNumber" bindgetphonenumber="processBindPhone" class="bind_now">立即绑定</button>
+		</view>
+	</view>
+</view>
+<!-- 登录框 -->
+<view class="login_modal" wx:if="{{isShowLoginModal}}">
+	<form bindsubmit="loginSubmit" class="card">
+		<view class="card_row">
+			<view class="card_row_title">手机号</view>
+			<input class="phone" name="phone" value="{{userPhone}}" bindinput='changePhone' type="number" />
+		</view>
+		<view class="card_row">
+			<button class="login_btn" formType="submit">确定</button>
+		</view>
+	</form>
+</view>
+
+
+
