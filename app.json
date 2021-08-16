@@ -127,7 +127,9 @@
     "pages/zwpp/nmsz/zwpp",
     "pages/zwppDetail/nmsz/zwppDetail",
     "pages/home/hn/hnszsz/home",
-    "pages/zwpp/hnszsz/zwpp"
+    "pages/zwpp/hnszsz/zwpp",
+    "pages/zwppDetail/hnszsz/zwppDetail",
+    "pages/home/xizang/xzggyy/home"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
