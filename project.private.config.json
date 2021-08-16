@@ -19,9 +19,15 @@
           "scene": null
         },
         {
-          "name": "pages/home/hu/husz/home",
-          "pathName": "pages/home/hu/husz/home",
-          "query": "city_or_school=qiqihaer&scode=hanhan",
+          "name": "pages/home/nm/nmsz/home",
+          "pathName": "pages/home/nm/nmsz/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/hn/hnszsz/home",
+          "pathName": "pages/home/hn/hnszsz/home",
+          "query": "",
           "scene": null
         }
       ]

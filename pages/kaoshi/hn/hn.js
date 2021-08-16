@@ -46,6 +46,10 @@ Page({
       wx.navigateTo({
         url: '/pages/home/hn/hnsz/home',
       })
+    } else if (entrance == 'hnszsz') {
+      wx.navigateTo({
+        url: '/pages/home/hn/hnszsz/home',
+      })
     }
     
   },

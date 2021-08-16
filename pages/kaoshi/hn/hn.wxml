@@ -5,6 +5,7 @@
   <view>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='hnsz'>湖南省直遴选</button>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='hncssz'>湖南长沙市直遴选</button>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='hnszsz'>2020年湖南省直市直遴选</button>
   </view>
 </view>
 

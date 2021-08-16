@@ -7,6 +7,7 @@
     <!-- <button bindtap="ChooseKaoshi" data-entrance='yn'>云南</button> -->
     <!-- <button bindtap="ChooseKaoshi" data-entrance='hb'>河北</button> -->
     <button bindtap="ChooseKaoshi" data-entrance='zylx'>中央遴选</button>
+    <button bindtap="ChooseKaoshi" data-entrance='nm'>内蒙古</button>
     <button bindtap="ChooseKaoshi" data-entrance='xz'>西藏</button>
     <button bindtap="ChooseKaoshi" data-entrance='js'>江苏</button>
     <button bindtap="ChooseKaoshi" data-entrance='gd'>广东</button>

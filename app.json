@@ -121,7 +121,13 @@
     "pages/zwppDetail/xzsydw/zwppDetail",
     "pages/home/yn/ynszlx2/home",
     "pages/zwpp/ynszlx2/zwpp",
-    "pages/zwppDetail/ynszlx2/zwppDetail"
+    "pages/zwppDetail/ynszlx2/zwppDetail",
+    "pages/kaoshi/nm/nm",
+    "pages/home/nm/nmsz/home",
+    "pages/zwpp/nmsz/zwpp",
+    "pages/zwppDetail/nmsz/zwppDetail",
+    "pages/home/hn/hnszsz/home",
+    "pages/zwpp/hnszsz/zwpp"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",

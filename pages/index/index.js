@@ -174,6 +174,10 @@ Page({
       wx.navigateTo({
         url: '/pages/kaoshi/gd/gd', //广东
       })
+    } else if (entrance == 'nm') { //内蒙古
+      wx.navigateTo({
+        url: '/pages/kaoshi/nm/nm', //内蒙古
+      })
     } else {
       wx.navigateTo({
         url: '/pages/kaoshi/' + entrance + '/' + entrance,
