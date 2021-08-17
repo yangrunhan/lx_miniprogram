@@ -862,6 +862,7 @@ Page({
       }
     })
     
+    console.log(data);
     // 注册
     wx.request({
       url: CONFIG.RegisterDIYAPI+actid,
