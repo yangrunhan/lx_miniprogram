@@ -7,23 +7,27 @@ const CONFIG = require('../../../config');
 
 Page({
   data: {
-    danweiArr: [],
+    cityArr: [],
+    cityIndex: 0,
+    danweiArr: ['请选择单位'],
     danweiIndex: 0,
-    xueliArr: ['学历', '研究生', '本科'],
+    xueliArr: ['学历', '大专', '本科','研究生'],
     xueliIndex: 0,
     zhuanye: '',
+    actid: '41539'
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
-    this.getdanweilist()
+    this.getCityList();
   },
-  // 获取单位列表
-  getdanweilist:function(){
-    let that = this
+
+  // 获取地市
+  getCityList(){
+    const that = this;
     wx.request({
       url: 'https://zg99.offcn.com/index/chaxun/getlevel',
       data:{
-        "actid":41531,
+        "actid":that.data.actid,
         "level":"1",
         "grfiled":"",
         "grtext":"",
@@ -31,15 +35,13 @@ Page({
       },
       success:res=>{
         var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
-        // console.log(data);
-        let danweiArr = ["请选择单位"]
+        let cityArr = ["请选择地市"]
         if(data.status == 1){
           data.lists.map((item)=>{
-            console.log(item)
-            danweiArr.push(item.danwei)
+            cityArr.push(item.city);
           })
           that.setData({
-            danweiArr:danweiArr
+            cityArr:cityArr
           })
           
         }else{
@@ -49,8 +51,49 @@ Page({
           })
         }
       }
-    })
+    });
+  },
 
+  // 改变地市
+  cityChange(e){
+    this.setData({
+      cityIndex: e.detail.value,
+    });
+    this.getdanweilist(this.data.cityArr[this.data.cityIndex]);
+  },
+
+  // 获取单位列表
+  getdanweilist:function(city){
+    const that = this;
+    wx.request({
+      url: 'https://zg99.offcn.com/index/chaxun/getlevel',
+      data:{
+        "actid":that.data.actid,
+        "level":"2",
+        "grfiled":"city",
+        "grtext":city,
+        "itemstamp":new Date().getTime()
+      },
+      success:res=>{
+        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        // console.log(data);
+        let danweiArr = ["请选择单位"]
+        if(data.status == 1){
+          data.lists.map((item)=>{
+            danweiArr.push(item.danwei);
+          });
+          that.setData({
+            danweiArr:danweiArr
+          })
+          
+        }else{
+          wx.showToast({
+            title: '请选择地市',
+            icon: "none"
+          })
+        }
+      }
+    });
   },
 
   // 生命周期函数--监听页面显示
@@ -80,44 +123,33 @@ Page({
   // 立即查询
   inquireBtn(e) {
 
-    let danwei;
-    if (e.detail.value.danwei == 0) {
-      danwei = "";
-    } else {
-      danwei = this.data.danweiArr[e.detail.value.danwei];
-    }
-
-    let xueli;
-    if (e.detail.value.xueli == 0) {
-      xueli = "";
-    } else {
-      xueli = this.data.xueliArr[e.detail.value.xueli];
-    }
-
-    let zhuanye_str = this.data.zhuanye
+    const city = this.data.cityArr[this.data.cityIndex];
+    const danwei = this.data.danweiArr[this.data.danweiIndex];
+    const xueli = this.data.xueliArr[this.data.xueliIndex];
+    const zhuanye_str = this.data.zhuanye
 
     let searchData = JSON.stringify({
+      'city': city,
       'danwei': danwei,
       'xueli': xueli,
       'zhuanye': zhuanye_str
     });
     console.log(searchData);
 
-    if (!danwei && !xueli) {
+    if (!city && !danwei && !xueli) {
       wx.showModal({
         title: '提示',
         content: '请选择查询条件',
         success(res) {}
       })
     } else {
-
       wx.showLoading({
         title: '查询中···',
         mask: true,
       });
 
       wx.navigateTo({
-        url: "../../zwppDetail/nmsz/zwppDetail?searchData=" + searchData,
+        url: "../../zwppDetail/hnszsz/zwppDetail?searchData=" + searchData,
       })
     }
 

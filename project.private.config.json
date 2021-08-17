@@ -13,20 +13,26 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/bmrs/bmrs",
-          "pathName": "pages/bmrs/bmrs",
-          "query": "actid=41140",
-          "scene": null
-        },
-        {
-          "name": "pages/home/nm/nmsz/home",
+          "name": "2020内蒙古区直遴选",
           "pathName": "pages/home/nm/nmsz/home",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/home/hn/hnszsz/home",
+          "name": "2020年湖南职位检索",
           "pathName": "pages/home/hn/hnszsz/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "云南报名人数查询",
+          "pathName": "pages/bmrs/bmrs",
+          "query": "actid=41543&fxname=kunming",
+          "scene": null
+        },
+        {
+          "name": "西藏遴选公告预约",
+          "pathName": "pages/home/xizang/xzggyy/home",
           "query": "",
           "scene": null
         }

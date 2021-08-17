@@ -59,7 +59,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 564rpx;
+  width: 620rpx;
   height: 66rpx;
   font-size: 26rpx;
   color: #727394;
@@ -79,11 +79,11 @@
 
 
 .section .section_icon_1 {
-  margin-left: 28rpx;
-  margin-right: 17rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
   width: 28rpx;
   height: 28rpx;
-  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_icon_1.png')no-repeat top center;
+  background: url(http://hn.offcn.com/zg/pocket/images/zwpp_icon_1.png)no-repeat top center;
   background-size: 100% 100%;
 }
 

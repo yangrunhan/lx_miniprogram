@@ -5,6 +5,7 @@
   <view>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='xzszsz'>西藏自治区直属机关职位检索</button>
 		<button style="width:100%;" bindtap="toNextPage" data-entrance='xzsydd'>西藏自治区事业单位职位检索</button>
+		<button style="width:100%;" bindtap="toNextPage" data-entrance='xzggyy'>西藏自治区遴选公告预约</button>
   </view>
 </view>
 

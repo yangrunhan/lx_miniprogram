@@ -7,7 +7,7 @@ Page({
     userPhone: '', //学员手机号
     cityIndex: 0,
     input_name: '', //姓名
-    cityArr: ['遴选地区', '省直', '广州市', '韶关市', '深圳市', '珠海市', '汕头市', '佛山市', '江门市', '湛江市', '茂名市', '肇庆市', '惠州市', '梅州市', '汕尾市', '河源市', '阳江市', '清远市', '东莞市', '中山市', '潮州市', '揭阳市', '云浮市'], //省直、地市
+    cityArr: ['遴选地区', '西藏事业单位遴选', '西藏区直遴选'], //省直、地市
   },
 
   // 生命周期函数--监听页面加载
@@ -110,7 +110,7 @@ Page({
 
       let data = {};
       data.phone = this.data.userPhone;
-      data.entrance_1 = '广东遴选省直地市公告预约';
+      data.entrance_1 = '西藏遴选公告预约';
       data.entrance_2 = `预约${this.data.cityArr[this.data.cityIndex]}`;
 
       wx.request({
@@ -139,21 +139,24 @@ Page({
 
     //跳转小能
     showXn:function(e){
-      console.log(e)
-      let xnid = e.target.dataset.xnid;
-      let url = 'https://bj-10353.ntalker.com/downt/t2d/chat.php'
-      console.log(url);
-      wx.navigateTo({
-        url: '/pages/xiaoneng/xiaoneng?url='+url+'&xnid='+xnid,
+      wx.navigateToMiniProgram({
+        appId: 'wx3dec2f3a28471026',
+        path: 'pages/index/index?source=sharelock&minicodeid=762991',
+        extraData: {
+          // foo: 'bar'
+        },
+        envVersion: 'release',
+        success(res) {
+          // 打开成功
+        }
       })
-  
     },
 
     // 跳转19课堂
     toclass:function(e){
       wx.navigateToMiniProgram({
         appId: 'wx3dec2f3a28471026',
-        path: 'pages/index/index?source=sharelock&minicodeid=731294',
+        path: 'pages/index/index?source=sharelock&minicodeid=765535',
         extraData: {
           // foo: 'bar'
         },

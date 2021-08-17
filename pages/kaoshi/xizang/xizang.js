@@ -45,6 +45,10 @@ Page({
       wx.navigateTo({
         url: '/pages/home/xizang/xzsydd/home',
       })
+    }else if(entrance == 'xzggyy') {
+      wx.navigateTo({
+        url: '/pages/home/xizang/xzggyy/home',
+      })
     }
   },
 
