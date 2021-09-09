@@ -129,7 +129,19 @@
     "pages/home/hn/hnszsz/home",
     "pages/zwpp/hnszsz/zwpp",
     "pages/zwppDetail/hnszsz/zwppDetail",
-    "pages/home/xizang/xzggyy/home"
+    "pages/home/xizang/xzggyy/home",
+    "pages/zwppDetail/husz2/zwppDetail",
+    "pages/kaoshi/nx/nx",
+    "pages/home/nx/nxsz/home",
+    "pages/zwpp/nxsz/zwpp",
+    "pages/zwppDetail/nxsz/zwppDetail",
+    "pages/kaoshi/tj/tj",
+    "pages/home/tj/tjsz/home",
+    "pages/zwpp/tjsz/zwpp",
+    "pages/zwppDetail/tjsz/zwppDetail",
+    "pages/home/sc/scshizhi/home",
+    "pages/zwpp/scshizhi/zwpp",
+    "pages/zwppDetail/scshizhi/zwppDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",
