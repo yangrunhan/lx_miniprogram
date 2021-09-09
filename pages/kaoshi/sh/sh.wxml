@@ -1,0 +1,8 @@
+<!--pages/kaoshi/sh/sh.wxml-->
+<view class="kaoshi">
+  <view class="title">请选择考试</view>
+  <view>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='shgqfjg'>2020上海市工青妇机关遴选</button>
+  </view>
+</view>
+

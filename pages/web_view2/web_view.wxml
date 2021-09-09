@@ -1,0 +1,16 @@
+<!--pages/web_view/web_view.wxml-->
+
+<view class="show_tz_url">
+    <view class="tz_info tz_info1">无法打开访问域名</view>
+    <view class="tz_info tz_info2">点击下面链接复制到浏览器打开</view>
+    <view class="tz_link" bindtap="copyText" data-text="{{url}}">{{url}}</view>
+  </view>
+
+<!-- <web-view src="https://mp.weixin.qq.com/s/j26_a5q7nCnJoyYp5mciHA"></web-view> -->
+<!-- <web-view src="https://m.zgxds.cn/"></web-view> -->
+<!--<web-view src="https://m.zgxds.cn/"></web-view>
+ <view class="page-body">
+  <view class="page-section page-section-gap">
+    <web-view src="https://www.zgxds.cn/"></web-view>
+  </view>
+</view> -->

@@ -1,0 +1,29 @@
+/* pages/home/sc/scdzxbld/scdzxbld.wxss */
+
+.main {
+  clear: both;
+  width: 750rpx;
+  height: 1387rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.match{
+  position: absolute;
+  top:420px;
+  text-align: center;
+  width: 100%;
+}
+.yuyue_btn{
+  display: inline-block;
+  width: 280rpx;
+  height: 100rpx;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(-87deg, #f32c3a, #fc6753);
+  color: #fff;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  border-radius: 20rpx;
+  text-align: center
+}

@@ -1,0 +1,35 @@
+<!--pages/zwppDetail/ynszlx2/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到2021年天津市公开遴选/选调公务员职位表中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="zhiwei_name">选调/遴选机关：{{item.danwei}}</view>
+			<view class="zgzs">单位代码：{{item.dwdm}}</view>
+			<view class="zgzs">选调/遴选总人数：{{item.lxzrs}}</view>
+			<view class="zgzs">职位名称：{{item.zhiwei}}</view>
+			<view class="zgzs">职位代码：{{item.zwjj}}</view>
+			<view class="zgzs">职位类别：{{item.zwlb}}</view>
+			<view class="zgzs">遴选简介：{{item.zwjie}}</view>
+			<view class="zgzs">选调/遴选人数：{{item.gws}}</view>
+			<view class="zgzs">年龄要求：{{item.age}}</view>
+			<view class="zgzs">学历：{{item.xueli}}</view>
+			<view class="zgzs">学位：{{item.xuewei}}</view>
+			<view class="zgzs">专业要求：{{item.zhuanye}}</view>
+			<view class="zgzs">政治面貌：{{item.zzmm}}</view>
+			<view class="zgzs">对象范围：{{item.dxfw}}</view>
+			<view class="zgzs">区域范围：{{item.qyfw}}</view>
+			<view class="zgzs">其他条件：{{item.other}}</view>
+			<view class="zgzs">咨询电话：{{item.telephone}}</view>
+			<view class="zgzs">传真电话：{{item.fax}}</view>
+			<view class="zgzs">备注：{{item.beizhu}}</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

@@ -1,0 +1,112 @@
+<!--pages/bmrs/bmrs.wxml-->
+<view>
+	<view class="top">
+		<view class="top_title_1">{{ks_name}}</view>
+		<view class="top_title_2">{{xt_name}}</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+
+      <picker wx:if="{{Ld1Arr.length > 0}}" name="{{Ld1Name}}" bindchange="ld1Change" range="{{Ld1Arr}}" value="{{Ld1Index}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{Ld1Arr[Ld1Index]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+      </picker>
+      
+      
+      <picker wx:if="{{Ld2Arr.length > 0}}" name="{{Ld2Name}}" bindchange="ld2Change" bindtap="LD2Click"  range="{{Ld2Arr}}" value="{{Ld2Index}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{Ld2Arr[Ld2Index]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+			      
+      <picker wx:if="{{Ld3Arr.length > 0}}" name="{{Ld3Name}}" bindchange="ld3Change" bindtap="LD3Click"  range="{{Ld3Arr}}" value="{{Ld3Index}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{Ld3Arr[Ld3Index]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+			
+
+			      
+      <picker wx:if="{{Ld4Arr.length > 0}}" name="{{Ld4Name}}" bindchange="ld4Change" bindtap="LD4Click"  range="{{Ld4Arr}}" value="{{Ld4Index}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{Ld4Arr[Ld4Index]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+
+			
+			<!-- 选择年份 -->
+			<!-- <picker name="year" bindchange="yearChange" range="{{yearArr}}" value="{{yearIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{yearArr[yearIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker> -->
+      <!-- 选择城市 -->
+			<!-- <picker name="city" bindchange="cityChange" range="{{cityArr}}" value="{{cityIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{cityArr[cityIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker> -->
+      <!-- 选择学历 -->
+			<!-- <picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{xueliArr[xueliIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker> -->
+			
+			<!-- <input name='zhuanye' bindinput="zhuanyeInput" class="section" placeholder='*不限专业可不填写'></input> -->
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+  </view>
+  
+  <view class="wx_login_mod" wx:if="{{telLogin_isshow}}">
+		<view class="wx_login_close" catchtap="closetellogin">暂不绑定</view>
+		<text class="info">为了更好的为您服务，请绑定手机号码</text>
+		<button  class="btn" open-type="getPhoneNumber" bindgetphonenumber="getphonenumber">立即绑定</button>
+	</view>
+	<view class="wx_login_mod" wx:if="{{telregister_isshow}}">
+		<view class="wx_login_close" catchtap="closetelregister">暂不注册</view>
+		<form bindsubmit="registerPhone">
+			<input name='userphone' bindinput="userphoneInput" class="section" placeholder='请填写手机号'></input>
+			<button  class="btn" form-type="submit">立即注册</button>
+		</form>
+	</view>
+</view>	
+
+
+
+
+

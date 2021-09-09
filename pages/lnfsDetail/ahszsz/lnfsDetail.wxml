@@ -1,0 +1,39 @@
+<!--pages/lnfsDetail/ahszsz/lnfsDetail.wxml-->
+
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到安徽省直遴选中符合条件的数据</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="bumen_name">{{item.danwei}}</view>
+			<view class="zhiwei_name">{{item.zhiwei}}</view>
+			<view class="zhiwei_name">{{item.zw_code}}</view>
+			<view class="bmrs" wx:if="{{item.jhs}}">计划数{{item.	jhs}}</view>
+      <view class="item_row" wx:if="{{item.max_score}}">
+				<view class="flex_a_c zgzs" wx:if="{{item.max_score}}">进面最高分：{{item.max_score}}</view>
+				<view class="flex_a_c zgzs" wx:if="{{item.min_score}}">进面最低分：{{item.min_score}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">学历：{{item.xueli}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.qtyq}}">
+				<view class="flex_a_c zgzs">其他条件：{{item.qtyq}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!--pages/zwppDetail/ahszsz/zwppDetail.wxml-->
+
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到云南省纪委监委中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="bumen_name">{{item.dw_name}}</view>
+			<view class="zhiwei_name">{{item.zw_name}}</view>
+			<view class="zhiwei_name">{{item.zw_code}}</view>
+			<view class="bmrs" wx:if="{{item.dw_type}}">单位性质：{{item.dw_type}}</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">计划人数:{{item.jhs}}</view>
+				<view class="flex_a_c zgzs">学历：{{item.xueli}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.bmrs}}">
+				<view class="flex_a_c zgzs">报名人数：{{item.bmrs}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.jingzhengbi}}">
+				<view class="flex_a_c zgzs">竞争比：{{item.jingzhengbi}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.zwjj}}">
+				<view class="flex_a_c zgzs">专门面向选调生遴选职位：{{item.forxds}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.max}}">
+				<view class="flex_a_c zgzs">进面最高分：{{item.max}}</view>
+			</view>
+      <view class="item_row" wx:if="{{item.min}}">
+				<view class="flex_a_c zgzs">进面最低分：{{item.min}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+
+

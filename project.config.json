@@ -1,0 +1,195 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "showES6CompileOption": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.10.4",
+  "appid": "wxfa7a2293dc75eae9",
+  "projectname": "%E5%85%AC%E8%80%83%E5%8F%A3%E8%A2%8B",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "个人中心",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "职位匹配",
+          "pathName": "pages/zwpp/zwpp",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "职位匹配详情",
+          "pathName": "pages/zwppDetail/zwppDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "首页",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "area=hunan&scode=ty124017",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "专业目录查询",
+          "pathName": "pages/zyml/zyml",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "往年入面分数查询",
+          "pathName": "pages/wnrmfsx/wnrmfsx",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index?area=bj",
+          "pathName": "pages/index/index",
+          "query": "area=bj",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/home/bj/bjsz/home",
+          "pathName": "pages/home/bj/bjsz/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/zylx/home?area=0001",
+          "pathName": "pages/home/zylx/home",
+          "query": "area=taotao&fxname=taotao",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/home/zylx/home",
+          "pathName": "pages/home/zylx/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/zylx/home?area=bj",
+          "pathName": "pages/home/zylx/home",
+          "query": "area=bj2",
+          "scene": null
+        },
+        {
+          "name": "pages/SukanPage/SukanPage",
+          "pathName": "pages/SukanPage/SukanPage",
+          "query": "fxname=湖南分校&actid=31278",
+          "scene": null
+        },
+        {
+          "name": "pages/bmrs/bmrs",
+          "pathName": "pages/bmrs/bmrs",
+          "query": "fxname=海南分校&actid=31455",
+          "scene": null
+        },
+        {
+          "name": "pages/home/hi/hiszlx/home",
+          "pathName": "pages/home/hi/hiszlx/home",
+          "query": "fxname=海南分校&actid=31455",
+          "scene": null
+        },
+        {
+          "name": "pages/zwpp/zylx/zwpp",
+          "pathName": "pages/zwpp/zylx/zwpp",
+          "query": "area=taotao&fxname=taotao",
+          "scene": null
+        },
+        {
+          "name": "pages/home/gs/gssz/home",
+          "pathName": "pages/home/gs/gssz/home",
+          "query": "fxname=zongbu",
+          "scene": null
+        },
+        {
+          "name": "pages/zwppDetail/jxszsz/zwppDetail",
+          "pathName": "pages/zwppDetail/jxszsz/zwppDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/zwppDetail/jxszsz/zwppDetail",
+          "pathName": "pages/zwppDetail/jxszsz/zwppDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/zwpp/jxszsz/zwpp",
+          "pathName": "pages/zwpp/jxszsz/zwpp",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

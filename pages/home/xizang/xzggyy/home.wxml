@@ -1,0 +1,33 @@
+<!--pages/zwpp/ahszsz/zwpp.wxml-->
+
+<image src="//www.zglinxuan.com/zt/to_mini/img/banner_title_xz.png" mode="aspectFit" class="title-image"></image>
+<text class="small-title">笔试发布后，第一时间电话/短信通知您!</text>
+
+<view class="form_ctn">
+
+	<!-- 输入姓名 -->
+	<view class="input-border name-input">
+		<view class="section_icon_1"></view>
+		<input name='zhuanye' bindinput="nameInput" class="section" placeholder='请输入姓名'></input>
+	</view>
+
+	<!-- 选择城市 -->
+	<view class="input-border city-select">
+		<view class="section_icon_1"></view>
+		<picker name="city" bindchange="cityChange" range="{{cityArr}}" value="{{cityIndex}}" class="section">
+				<view class="picker">
+					{{cityArr[cityIndex]}}
+				</view>
+				<view class="arrow"></view>
+		</picker>
+	</view>
+
+	<!-- 立即查询 -->
+	<button class="inquire_btn" open-type="getPhoneNumber" bindgetphonenumber="processBindPhone">立即预约</button>
+
+</view>
+
+<view class="two-buttons">
+		<button class="fx_zixun_btn" bindtap="showXn">西藏区直遴选</button>
+		<button class="fx_zixun_btn" bindtap="toclass">西藏事业单位遴选</button>
+	</view>

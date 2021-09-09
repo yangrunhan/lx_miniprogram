@@ -1,0 +1,29 @@
+<!--pages/my/my.wxml-->
+<view>
+	<view class="bg">
+		<view class="page_title">我的主页</view>
+	</view>
+	<view class="card">
+		<view class="user_info">
+			<view class="avatar_ctn">
+				<image class="avatar" mode="cover" src="{{userInfo ? userInfo.avatarUrl : 'http://hn.offcn.com/zg/pocket/images/touxiang3.png'}}" />
+			</view>
+			<view class="nickname">{{userInfo ? userInfo.nickName : '遴选考生'}}</view>
+		</view>
+
+		<view class="list">
+			<!-- <view class="row row_1">
+				<view class="row_icon row_icon_1"></view>
+				<view class="row_text">查看收藏职位</view>
+			</view> -->
+
+			<!-- <view class="row row_2" bindtap="lookScoreRanking">
+				<view class="row_icon row_icon_2"></view>
+				<view class="row_text">查看晒分职位排名</view>
+			</view> -->
+		</view>
+	</view>
+</view>
+
+<!-- tabbar -->
+<customTabbar tabbar="{{tabbar}}" />

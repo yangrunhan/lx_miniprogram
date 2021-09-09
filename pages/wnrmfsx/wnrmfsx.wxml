@@ -1,0 +1,117 @@
+<!-- 入面分数线查询  pages/wnrmfsx/wnrmfsx.wxml -->
+<view>
+	<view class="top">
+		<view class="top_title_1">湖南省公务员考试</view>
+		<view class="top_title_2">入面分数线查询 </view>
+		<view class="progress"></view>
+	</view>
+
+	<!-- 表单 -->
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			<!-- 考试年份 -->
+			<view class="section" bindtap="selectedYear" data-type="0">
+				<view class="section_icon_1"></view>
+				<view class="picker">{{years == '' ? '考试年份' : years}}</view>
+				<view class="arrow"></view>
+			</view>
+			<!-- 工作地区 -->
+			<view class="section" bindtap="selectedCity" data-type="1">
+				<view class="section_icon_2"></view>
+				<view class="picker">{{city == '' ? '工作地区' : city}}</view>
+				<view class="arrow"></view>
+			</view>
+			<!-- 单位名称 -->
+			<!-- <view class="section" bindtap="showDrawer"> -->
+			<view class="section" bindtap="selectedUnit" data-type="2">
+				<view class="section_icon_3"></view>
+				<view class="picker">{{unit == '' ? '单位名称' : unit}}</view>
+				<view class="arrow"></view>
+			</view>
+			<!-- 职位名称 -->
+			<view class="section" bindtap="selectedPosition" data-type="3">
+				<view class="section_icon_4"></view>
+				<view class="picker">{{position == '' ? '职位名称' : position}}</view>
+				<view class="arrow"></view>
+			</view>
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+
+	<!-- 查询结果 -->
+	<view class="queryResults" wx:if="{{searchResult.length > 0}}">
+		<view class="title">查询结果</view>
+		<view class="list">
+			<view class="item" wx:for="{{searchResult}}" wx:key="index">
+				<view class="row">
+					<view class="col icon_1">
+						专业要求：{{item.zyyq}}
+					</view>
+					<view class="col icon_2">
+						地区：{{item.city}}
+					</view>
+				</view>
+				<view class="row">
+					<view class="col icon_3">
+						岗位类型：{{item.identity}}
+					</view>
+					<view class="col icon_4">
+						招录人数：{{item.zlrs}}
+					</view>
+				</view>
+				<view class="row">
+					<view class="col icon_5">
+						最高年龄要求：{{item.zgnlyq}}
+					</view>
+					<view class="col icon_6" wx:if="{{item.bmrs}}">
+						报考人数：{{item.bmrs}}
+					</view>
+				</view>
+				<view class="row">
+					<view class="col icon_7" wx:if="{{item.jzb}}">
+						竞争比：{{item.jzb}}
+					</view>
+					<view class="col icon_8" wx:if="{{item.rmfs}}">
+						入面分数：{{item.rmfs}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 广告位 -->
+	<view class="ads" wx:if="{{ads.length > 0}}" style="{{!searchResult.length > 0 ? 'margin-top: 100rpx;' : 'margin-top:0;'}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+<!-- 下拉选择器 -->
+<view class="drawerModal" hidden="{{isHiddenDrawer}}">
+	<view bindtap="hideDrawer" class="mask"></view>
+	<!-- 选择 考试年份 -->
+	<scroll-view wx:if="{{selectType == 0}}" class="drawer" animation="{{animationData}}" scroll-y>
+		<view bindtap='setYears' wx:for="{{yearsArr}}" wx:key="index" data-value="{{item.years}}" class="drawer_item {{years==item.years ?'on':''}}">
+			{{item.years}}
+		</view>
+	</scroll-view>
+	<!-- 选择 工作地区 -->
+	<scroll-view wx:if="{{selectType == 1}}" class="drawer" animation="{{animationData}}" scroll-y>
+		<view bindtap='setCity' wx:for="{{cityArr}}" wx:key="index" data-value="{{item.city}}" class="drawer_item {{city==item.city ?'on':''}}">
+			{{item.city}}
+		</view>
+	</scroll-view>
+	<!-- 选择 单位名称 -->
+	<scroll-view wx:if="{{selectType == 2}}" class="drawer" animation="{{animationData}}" scroll-y>
+		<view bindtap='setUnit' wx:for="{{unitArr}}" wx:key="index" data-value="{{item.bumen_name}}" class="drawer_item {{unit==item.bumen_name ?'on':''}}">
+			{{item.bumen_name}}
+		</view>
+	</scroll-view>
+	<!-- 选择 职位名称 -->
+	<scroll-view wx:if="{{selectType == 3}}" class="drawer" animation="{{animationData}}" scroll-y>
+		<view bindtap='setPosition' wx:for="{{positionArr}}" wx:key="index" data-value="{{item.zhiwei_name}}" class="drawer_item {{position==item.zhiwei_name ?'on':''}}">
+			{{item.zhiwei_name}}
+		</view>
+	</scroll-view>
+</view>

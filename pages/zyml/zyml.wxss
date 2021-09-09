@@ -1,0 +1,259 @@
+/* pages/zyml/zyml.wxss */
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 172rpx;
+  line-height: 1;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_1.png')no-repeat top center;
+  background-size: 100% 100%;
+  color: #fff;
+  text-shadow: 1.5px 2.598px 7px rgba(106, 135, 226, 0.35);
+  position: relative;
+}
+
+.top_title_1 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.top_title_2 {
+  margin-top: 23rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 50rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #f2e3f3;
+}
+
+.progress::after {
+  content: '';
+  display: block;
+  width: 62rpx;
+  height: 62rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_3.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+/* 表单 */
+.form_ctn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 52rpx;
+}
+
+.section {
+  margin-top: 39rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 564rpx;
+  height: 66rpx;
+  font-size: 26rpx;
+  color: #727394;
+  border-radius: 10rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.section .arrow {
+  position: absolute;
+  right: 20rpx;
+  width: 22rpx;
+  height: 12rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/arrow_bottom.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.section .section_icon_1 {
+  margin-left: 26rpx;
+  margin-right: 15rpx;
+  width: 33rpx;
+  height: 25rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_icon_3.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.section .section_icon_2 {
+  margin-left: 28rpx;
+  margin-right: 17rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_icon_6.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.section .discipline {
+  flex: 1;
+}
+
+.form_ctn .inquire_btn {
+  padding: 0;
+  margin-top: 39rpx;
+  width: 100% !important;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  background-color: #567bf3;
+  border-radius: 10rpx;
+}
+
+
+/* 下拉菜单 */
+.drawerModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.drawerModal .mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.drawerModal .drawer {
+  padding: 40rpx 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 500rpx;
+  text-align: center;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.drawerModal .drawer .drawer_item {
+  width: 100%;
+  height: 80rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  color: #131336;
+}
+
+.drawerModal .drawer .on {
+  color: #567bf3;
+  font-weight: bold;
+}
+
+/* 查询结果 */
+.queryResults {
+  padding: 48rpx 0 33rpx;
+  margin: 0 auto;
+  width: 690rpx;
+  box-sizing: border-box;
+}
+
+.queryResults .title {
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #212243;
+  text-align: center;
+}
+
+.queryResults .list {}
+
+.queryResults .list .item {
+  margin-top: 30rpx;
+  padding: 0 34rpx 30rpx;
+  width: 100%;
+  line-height: 1.462;
+  font-size: 26rpx;
+  color: #8e8faa;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.queryResults .list .item .row {
+  margin-top: 32rpx;
+  display: flex;
+  align-items: flex-start;
+}
+
+.queryResults .list .item .row .col {
+  position: relative;
+  padding-left: 38rpx;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.queryResults .list .item .row .col:nth-child(1) {
+  margin-right: 30rpx;
+}
+
+.icon_1::before,
+.icon_2::before {
+  position: absolute;
+  top: 8rpx;
+  left: 0;
+  display: block;
+  content: '';
+}
+
+.icon_1::before {
+  width: 29rpx;
+  height: 25rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zyml_icon_1.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.icon_2::before {
+  width: 26rpx;
+  height: 26rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zyml_icon_2.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+/* 广告位 */
+.ads {
+  margin: 0 auto 83rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 690rpx;
+  border-radius: 16rpx;
+}
+
+.ads .ads_item {
+  margin-bottom: 34rpx;
+  width: 100%;
+  height: 176rpx;
+  border-radius: 16rpx;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  background-color: #fff;
+}

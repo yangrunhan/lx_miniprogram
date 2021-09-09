@@ -1,0 +1,74 @@
+<!--pages/zwppDetail/gssz/zwppDetail.wxml-->
+<!--pages/zwppDetail/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到福建省省直机关遴选中符合条件的</text>
+		<text class="text_1">职位，点击查看详情了解更多该职位信息</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="zhiwei_name">{{item.dw_name}}</view>
+			<view class="item_row">
+				<view class="flex_a_c city">单位代码：{{item.dwdh}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">单位性质：{{item.dw_type}}</view>
+			</view>
+			<view class="zhiwei_name">{{item.zw_name}}</view>
+			<view class="item_row">
+				<view class="flex_a_c city">岗位代码：{{item.gwdm}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">招考人数：{{item.jhs}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">考试类别：{{item.kslb}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">学历类别：{{item.xllb}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">专业：{{item.zhuanye}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">学历：{{item.xueli}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">学位：{{item.xuewei}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">性别：{{item.sex}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">年龄：{{item.age}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c city">民族：{{item.people}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">政治面貌：{{item.zzmm}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">招考范围：{{item.fanwei}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">专门岗位：{{item.zmgw}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">联系方式：{{item.tel_num}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">其他要求：{{item.other}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">备注：{{item.beizhu}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

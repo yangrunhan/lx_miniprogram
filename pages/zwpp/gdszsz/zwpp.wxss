@@ -1,0 +1,184 @@
+page {
+  background: url('//www.zglinxuan.com/zt/to_mini/img/gdggyybg.jpg') center no-repeat;
+  background-size: 100% 100%;
+  padding-top: 107rpx;
+}
+
+.title-image {
+  display: block;
+  width: 683rpx;
+  height: 248rpx;
+  margin-left: 48rpx;
+}
+
+.small-title {
+  background-color: #e34000;
+  width: 524rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+  white-space: nowrap;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff100;
+  border-radius: 24rpx;
+  display: block;
+  margin: 40rpx auto 40rpx;
+  text-align: center;
+}
+
+.form_ctn {
+  width: 609rpx;
+  height: 410rpx;
+  padding-top: 50rpx;
+  background-color: #ffffff;
+  border-radius: 30rpx;
+  margin: 0 auto 95rpx;
+}
+
+.input-border {
+  width: 530rpx;
+  height: 74rpx;
+  margin: 0 auto 44rpx;
+  background-color: #efefef;
+  border-radius: 28rpx;
+  box-sizing: border-box;
+  padding-left: 94rpx;
+  position: relative;
+}
+
+.input-border .section_icon_1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.name-input .section_icon_1{
+  width: 44rpx;
+  height: 35rpx;
+  background-image: url('//www.zglinxuan.com/zt/to_mini/img/gd_icon1.png');
+  left: 25rpx;
+}
+
+.city-select .section_icon_1{
+  width: 24rpx;
+  height: 36rpx;
+  background-image: url('//www.zglinxuan.com/zt/to_mini/img/gd_icon2.png');
+  left: 38rpx;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+  color: #9fa0a0;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.city-select .section{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+
+.city-select .section .arrow {
+  position: absolute;
+  right: 20rpx;
+  width: 22rpx;
+  height: 12rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url('//www.zglinxuan.com/zt/to_mini/img/arrow_bottom.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+.city-select .section .picker{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0rpx;
+  line-height: 74rpx;
+}
+
+.inquire_btn {
+  padding: 0;
+  width: 528rpx!important;
+  height: 99rpx;
+  line-height: 99rpx;
+  font-weight: normal;
+  font-size: 48rpx;
+  color: #ffffff;
+  text-align: center;
+  background-color: #e60012;
+  border-radius: 23rpx;
+}
+
+.two-buttons {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 0px 106rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.two-buttons button.fx_zixun_btn {
+  padding: 0;
+  width: 239rpx !important;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #e60012;
+  text-align: center;
+  background-color: #fff100;
+  border-radius: 22rpx;
+  white-space: nowrap;
+  margin: 0 !important;
+}
+
+
+
+
+
+
+
+.position_l::after,
+.position_r::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 41rpx;
+  height: 41rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.position_l {
+  padding-left: 53rpx;
+  background-color: #DCD9D4;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%), radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+}
+
+.position_l::after {
+  left: 3rpx;
+}
+
+.position_r {
+  padding-left: 9rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwpp_icon_7.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.position_r::after {
+  /* right: 3rpx; */
+  left: 118rpx;
+}

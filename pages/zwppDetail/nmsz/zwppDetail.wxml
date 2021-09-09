@@ -1,0 +1,31 @@
+<!--pages/zwppDetail/ynszlx2/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到2020年内蒙古区直遴选中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="zhiwei_name">单位名称：{{item.danwei}}</view>
+			<view class="zgzs">机构性质：{{item.dwxz}}</view>
+			<view class="zgzs">职位名称：{{item.zhiwei}}</view>
+			<view class="zgzs">职位简介：{{item.zwjj}}</view>
+			<view class="zgzs">遴选人数：{{item.gws}}</view>
+			<view class="zgzs">学历：{{item.xueli}}</view>
+			<view class="zgzs">学位：{{item.xuewei}}</view>
+			<view class="zgzs">专业：{{item.zhuanye}}</view>
+			<view class="zgzs">政治面貌：{{item.zzmm}}</view>
+			<view class="zgzs">其他条件：{{item.other}}</view>
+			<view class="zgzs">咨询电话：{{item.telephone}}</view>
+			<view class="zgzs">传真：{{item.old}}</view>
+			<view class="zgzs">邮箱：{{item.email}}</view>
+			<view class="zgzs">备注：{{item.beizhu}}</view>
+			<view class="zgzs">试卷类型：{{item.tijian}}</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

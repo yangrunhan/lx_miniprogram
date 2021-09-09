@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "loginAuthModal": "/components/loginAuth_modal/loginAuth_modal",
+    "customTabbar": "/components/customTabbar/customTabbar"
+  }
+}

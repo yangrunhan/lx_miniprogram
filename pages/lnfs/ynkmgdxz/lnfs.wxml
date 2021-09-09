@@ -1,0 +1,68 @@
+<!--pages/lnfs/ahszsz/lnfs.wxml-->
+
+<!--pages/zwpp/ahszsz/zwpp.wxml-->
+
+
+<view>
+	<view class="top">
+		<view class="top_title_1">2020云南昆明官渡区</view>
+		<view class="top_title_2">历年分数线查询</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+			
+			<!-- 选择年份 -->
+			<picker name="year" bindchange="yearChange" range="{{yearArr}}" value="{{yearIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{yearArr[yearIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+      <!-- 选择地市 -->
+			<!-- <picker name="city" bindchange="cityChange" bindtap="cityClick" range="{{cityArr}}" value="{{cityIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{cityArr[cityIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker> -->
+      <!-- 选择单位 -->
+			<picker name="danwei" bindchange="danweiChange" bindtap="danweiClick" range="{{danweiArr}}" value="{{danweiIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{danweiArr[danweiIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+      </picker>
+      
+      
+      <!-- 选择职位 -->
+			<picker name="zhiwei" bindchange="zhiweiChange" bindtap="zhiweiClick" range="{{zhiweiArr}}" value="{{zhiweiIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{zhiweiArr[zhiweiIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+			
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+</view>	
+
+
+
+
+
+

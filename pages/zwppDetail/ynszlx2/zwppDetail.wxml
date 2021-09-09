@@ -1,0 +1,39 @@
+<!--pages/zwppDetail/ynszlx2/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到2021年云南省直遴选中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="zhiwei_name">{{item.danwei}}</view>
+			<view class="zhiwei_name">单位性质：{{item.dwxz}}</view>
+			<view class="zhiwei_name">{{item.zhiwei}}</view>
+			<view class="zhiwei_name">职位类型：{{item.zwlx}}</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">遴选岗位数:{{item.gws}}</view>
+				<view class="flex_a_c zgzs">学历：{{item.xueli}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">学位：{{item.xuewei}}</view>
+				<view class="flex_a_c zgzs">学历性质要求：{{item.xlxzyq}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">年龄限制：{{item.old}}</view>
+				<view class="flex_a_c zgzs">政治面貌：{{item.zzmm}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">是否组织体检：{{item.tijian}}</view>
+				<view class="flex_a_c zgzs">体检要求：{{item.tijianyq}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

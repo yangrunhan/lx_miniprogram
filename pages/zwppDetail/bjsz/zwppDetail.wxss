@@ -1,0 +1,255 @@
+/* pages/zwppDetail/bjsz/zwppDetail.wxss */
+
+
+/* 垂直居中 */
+.flex_a_c {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  padding-top: 21rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 196rpx;
+  line-height: 1;
+  border-bottom-left-radius: 26rpx;
+  border-bottom-right-radius: 26rpx;
+  color: #727394;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.prompt .text_1 {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+}
+
+.prompt .text_2 {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+}
+
+/* list */
+.list {
+  padding-bottom: 51rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list .item {
+  margin-top: 34rpx;
+  padding: 31rpx 25rpx 0 36rpx;
+  position: relative;
+  width: 690rpx;
+  font-size: 26rpx;
+  color: #8e8faa;
+  border-radius: 16rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.item_row {
+  margin: 20rpx 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.item_row view {
+  flex: 1;
+  padding-left: 41rpx;
+}
+
+.item_row view:nth-child(1) {
+  margin-right: 20rpx;
+}
+
+.bumen_name,
+.zhiwei_name {
+  line-height: 1;
+  color: #212243;
+  text-align: center;
+}
+
+.bumen_name {
+  font-size: 24rpx;
+}
+
+.zhiwei_name {
+  margin-top: 17rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.bmrs {
+  padding-top: 20rpx;
+  color: #ff606d;
+}
+
+.zyyq,
+.zlrs,
+.gender,
+.city,
+.zgnlyq,
+.zgzs,
+.jcgznx,
+.hjhsxmyq,
+.qtyq,
+.rmfs {
+  position: relative;
+}
+
+.zyyq::before,
+.zlrs::before,
+.gender::before,
+.city::before,
+.zgnlyq::before,
+.zgzs::before,
+.jcgznx::before,
+.hjhsxmyq::before,
+.qtyq::before,
+.rmfs::before {
+  position: absolute;
+  top: 6rpx;
+  left: 0;
+  content: '';
+  display: block;
+}
+
+.zyyq::before {
+  width: 26rpx;
+  height: 26rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_1.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.zlrs::before {
+  margin-right: 11rpx;
+  width: 26rpx;
+  height: 27rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_2.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.gender::before {
+  margin-right: 9rpx;
+  width: 30rpx;
+  height: 26rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_3.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.city::before {
+  margin-right: 12rpx;
+  width: 22rpx;
+  height: 26rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_4.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.zgnlyq::before {
+  margin-right: 12rpx;
+  width: 28rpx;
+  height: 27rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_5.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.zgzs::before {
+  margin-right: 12rpx;
+  width: 21rpx;
+  height: 27rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_6.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.jcgznx::before {
+  margin-right: 12rpx;
+  width: 25rpx;
+  height: 25rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_7.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.hjhsxmyq::before {
+  margin-right: 12rpx;
+  width: 27rpx;
+  height: 26rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_8.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.qtyq::before {
+  margin-right: 12rpx;
+  width: 23rpx;
+  height: 23rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_9.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.rmfs::before {
+  margin-right: 12rpx;
+  width: 23rpx;
+  height: 22rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_10.png')no-repeat top center;
+  background-size: 100% 100%;
+}
+
+.rmfs .fraction {
+  color: #ff606d;
+}
+
+.open {
+  margin-top: 50rpx;
+  position: relative;
+  width: 100%;
+  height: 38rpx;
+}
+
+.open .unfold {
+  position: absolute;
+  left: 50%;
+  bottom: 17rpx;
+  margin-left: -15.5rpx;
+  z-index: 99;
+  width: 33rpx;
+  height: 21rpx;
+  background: url('http://hn.offcn.com/zg/pocket/images/zwppDetail_icon_11.png')no-repeat top center;
+  background-size: 100% 100%;
+  transition: all .5s;
+}
+
+.packup {
+  transform: rotate(-180deg);
+}
+
+.hidden_ctn {
+  animation: all 0.5s;
+}
+
+/* 广告 */
+.ads {
+  margin: 0 auto 83rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 690rpx;
+  border-radius: 16rpx;
+}
+
+.ads .ads_item {
+  margin-bottom: 34rpx;
+  width: 100%;
+  height: 176rpx;
+  border-radius: 16rpx;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  background-color: #fff;
+}

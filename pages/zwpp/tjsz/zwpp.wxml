@@ -1,0 +1,55 @@
+<!--pages/zwpp/ynszlx2/zwpp.wxml-->
+
+
+<view>
+	<view class="top">
+		<view class="top_title_1">2021年天津市公开遴选/选调公务员职位表</view>
+		<view class="top_title_2">职位匹配</view>
+		<view class="progress"></view>
+	</view>
+	<view class="form_ctn">
+		<form bindsubmit="inquireBtn">
+
+			<!-- 选调/遴选 -->
+			<picker name="xdlx" bindchange="xdlxChange" range="{{xdlxArr}}" value="{{xdlxIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{xdlxArr[xdlxIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+		  <!-- 选择学历 -->
+			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{xueliArr[xueliIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+			<!-- 选择政治面貌 -->
+			<picker name="zzmm" bindchange="zzmmChange" range="{{zzmmArr}}" value="{{zzmmIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{zzmmArr[zzmmIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+			<!-- 专业 -->
+			<input name='zhuanye' bindinput="zhuanyeInput" class="section" placeholder='*不限专业可不填写'></input>
+
+			<!-- 立即查询 -->
+			<button class="inquire_btn" form-type="submit">立即查询</button>
+		</form>
+	</view>
+</view>	
+
+

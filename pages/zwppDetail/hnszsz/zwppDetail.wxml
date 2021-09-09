@@ -1,0 +1,36 @@
+<!--pages/zwppDetail/ynszlx2/zwppDetail.wxml-->
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到2020年内蒙古区直遴选中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="zhiwei_name">单位名称：{{item.danwei}}</view>
+			<view class="zgzs">遴选职位：{{item.zhiwei}}</view>
+			<view class="zgzs">职位性质：{{item.zwjj}}</view>
+			<view class="zgzs">遴选人数：{{item.gws}}</view>
+			<view class="zgzs">选调范围：{{item.dwxz}}</view>
+			<view class="zgzs">最高年龄要求：{{item.max_age}}</view>
+			<view class="zgzs">性别要求：{{item.sex}}</view>
+			<view class="zgzs">政治面貌：{{item.zzmm}}</view>
+			<view class="zgzs">学历要求：{{item.xueli}}</view>
+			<view class="zgzs">学位要求：{{item.xuewei}}</view>
+			<view class="zgzs">专业要求：{{item.zhuanye}}</view>
+			<view class="zgzs">笔试试卷类型：{{item.tijian}}</view>
+			<view class="zgzs">最低服务年限要求：{{item.min_year}}</view>
+			<view class="zgzs">笔试最低开考比例：{{item.min_test}}</view>
+			<view class="zgzs">其他要求：{{item.other}}</view>
+			<view class="zgzs">是否进行专业考试：{{item.if_test}}</view>
+			<view class="zgzs">咨询电话：{{item.telephone}}</view>
+			<view class="zgzs">传真号码：{{item.old}}</view>
+			<view class="zgzs">报名推荐表上传邮箱：{{item.email}}</view>
+			<view class="zgzs">是否面向选调生：{{item.if_xds}}</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>

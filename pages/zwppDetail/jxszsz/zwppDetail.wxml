@@ -1,0 +1,44 @@
+<!--pages/zwppDetail/ahszsz/zwppDetail.wxml-->
+
+<view>
+	<view class="prompt">
+		<text class="text_1">以下是为您查询到江西省直遴选中符合条件的职位</text>
+	</view>
+
+	<view class="list">
+		<view class="item" wx:for="{{search_result}}" wx:key="index">
+			<view class="bumen_name">单位名称：{{item.dw_name}}</view>
+			<view class="zhiwei_name">职位名称：{{item.zw_name}}</view>
+			<view class="zhiwei_name">职位代码：{{item.zw_code}}</view>
+			<view class="bmrs" wx:if="{{item.dw_type}}">单位性质：{{item.dw_type}}</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">计划数:{{item.jhs}}</view>
+				<view class="flex_a_c zgzs">政治面貌：{{item.zzmm}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">其他：{{item.other}}</view>
+			</view>
+      <view class="item_row">
+				<view class="flex_a_c zgzs">是否加试：{{item.sfjs}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">咨询电话：{{item.tel_info}}</view>
+			</view>
+			<view class="item_row">
+				<view class="flex_a_c zgzs">备注：{{item.beizhu}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="ads" wx:if="{{ads.length !== 0}}">
+		<navigator wx:if="{{item.ad_href !== ''}}" url="/pages/web_view/web_view?url={{item.ad_href}}" wx:for="{{ads}}" wx:key="index" class="ads_item" hover-class="none" style="background-image: url({{item.ad_img_src}});" open-type="navigate">
+		</navigator>
+	</view>
+</view>
+
+
+
+
