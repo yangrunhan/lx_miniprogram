@@ -13,26 +13,26 @@
     "miniprogram": {
       "list": [
         {
-          "name": "2020内蒙古区直遴选",
-          "pathName": "pages/home/nm/nmsz/home",
+          "name": "湖南首页",
+          "pathName": "pages/kaoshi/hn/hn",
+          "query": "q=https%3A%2F%2Fwww.www.zglinxuan.com%2Fminiappqrcode%2Fwxfa7a2293dc75eae9%2Fhunanzwjj%2F%3Fsid%3D791725ccb0dcfbedf58696c9607a17be%26formid%3D97514%26owner%3D58726%26orgn%3D11",
+          "scene": null
+        },
+        {
+          "name": "江西职位遴选",
+          "pathName": "pages/home/jx/jxszsz/home",
           "query": "",
           "scene": null
         },
         {
-          "name": "2020年湖南职位检索",
-          "pathName": "pages/home/hn/hnszsz/home",
-          "query": "",
+          "name": "pages/home/sc/scshizhi/home",
+          "pathName": "pages/home/sc/scshizhi/home",
+          "query": "fxname=sd",
           "scene": null
         },
         {
-          "name": "云南报名人数查询",
-          "pathName": "pages/bmrs/bmrs",
-          "query": "actid=41543&fxname=kunming",
-          "scene": null
-        },
-        {
-          "name": "西藏遴选公告预约",
-          "pathName": "pages/home/xizang/xzggyy/home",
+          "name": "福建省直遴选考试",
+          "pathName": "pages/home/fj/fjsz/home",
           "query": "",
           "scene": null
         }

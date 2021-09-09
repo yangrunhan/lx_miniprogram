@@ -48,7 +48,13 @@ Page({
       wx.navigateTo({
         url: '/pages/home/sc/scsz/home',
       })
+    } else if (entrance == 'scshizhi') {
+      wx.navigateTo({
+        url: '/pages/home/sc/scshizhi/home',
+      })
     }
+
+    
 
 
 
@@ -184,6 +190,8 @@ Page({
         data.entrance_1 = '甘肃省直机关遴选';
       } else if (entrance == 'sxsz') {
         data.entrance_1 = '山西省直机关遴选';
+      } else if (entrance == 'scshizhi') {
+        data.entrance_1 = '四川市直遴选';
       }
     }
     //获取推广信息

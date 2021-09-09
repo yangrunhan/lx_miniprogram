@@ -1,6 +1,3 @@
-// pages/home/ah/ahszsz/home.js
-
-
 const CONFIG = require('../../../../config');
 const app = getApp();
 
@@ -14,6 +11,8 @@ Page({
     isHiddenLoginAuthModal: true,
     isHiddenPhoneAuthModal: true,
     isShowLoginModal: false,
+
+    company_name:"通用",
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
@@ -21,6 +20,16 @@ Page({
     wx.setStorageSync('entrance', 'jxszsz');
     app.editTabbar();
     this.getIndexPageData();
+
+    if(options){
+
+      if(options.fxname){
+        this.setData({
+          company_name:options.fxname
+        })
+      }
+
+    }
 
   },
   // 生命周期函数--监听页面显示
@@ -45,36 +54,28 @@ Page({
         isHiddenPhoneAuthModal: false,
       })
     } else {
-
-      if(topage=="zwpp"){
-        wx.navigateTo({
-          url: '/pages/zwpp/jxszsz/zwpp',
-        })
-      }else if(topage=="lnfs"){
-
-        wx.navigateTo({
-          url: '/pages/lnfs/ynszsz/lnfs',
-        })
-      }
-    }
+      wx.navigateTo({
+        url: '/pages/zwpp/jxszsz/zwpp',
+      })
+    };
 
   },
 
   // 获取首页功能区 背景图URL
   getIndexPageData() {
-    console.log(CONFIG.getIndexPageDataAPI);
+    // console.log(CONFIG.getIndexPageDataAPI);
     console.log(wx.getStorageSync('entrance'));
     wx.request({
       url: CONFIG.getIndexPageDataAPI,
       data: {
         sort: wx.getStorageSync('entrance'),
+        timestemp:new Date().getTime()
       },
       success: res => {
         var str = res.data.substring(1, res.data.length - 1);
         str = str.replace(/\ +/g, "");//去掉空格
         str = str.replace(/[\r\n]/g, "");//去掉回车换行
-        console.log(str);
-        // console.log(typeof(str));
+        // console.log(str);
         var data = JSON.parse(str);
         if (data.status == 1) {
           // var ads = JSON.parse(data.lists[0].ad_1);  //广告先去掉
@@ -215,7 +216,7 @@ Page({
     let data = {};
     data.phone = this.data.userPhone;
 
-    data.entrance_1 = '2016、2017、2019江西省直遴选';
+    data.entrance_1 = '江西省直遴选职位检索';
 
     if(wx.getStorageSync('entrance_gn') == 'zwpp'){
       data.entrance_2 = '职位检索';
@@ -249,8 +250,7 @@ Page({
             duration: 1000
           })
           wx.switchTab({
-            url: '/pages/zwpp/ynszsz/zwpp',
-            // url: '/pages/home/home',
+            url: '/pages/zwpp/jxszsz/zwpp',
           })
         } else {
           wx.showToast({
@@ -258,6 +258,22 @@ Page({
             icon: 'none',
             duration: 1000
           })
+        }
+      }
+    })
+    // 单独表
+    data.company_name = this.data.company_name
+
+    wx.request({
+      url: CONFIG.RegisterAPI2+"39078",
+      data: data,
+      success: res => {
+        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        console.log(data);
+        if (data.status == 1) {
+
+        } else {
+
         }
       }
     })

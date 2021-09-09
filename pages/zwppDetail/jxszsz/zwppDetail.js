@@ -1,5 +1,4 @@
-// pages/zwppDetail/ahszsz/zwppDetail.js
-
+// pages/zwppDetail/ynszlx2/zwppDetail.js
 const CONFIG = require('../../../config');
 
 Page({
@@ -12,18 +11,15 @@ Page({
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
     if (options.searchData) { //参数
-      var searchData = JSON.parse(options.searchData);
+      const searchData = JSON.parse(options.searchData);
       console.log(searchData);
       wx.setNavigationBarTitle({
-        title: searchData.year + searchData.city + searchData.zhuanye + '检索详情',
+        title: searchData.xueli + searchData.zhuanye + '检索详情',
       });
-      searchData.limits = 500;
       this.setData({
         searchData: searchData,
-      })
+      });
     }
-
-    // this.getAdsData();
     this.inquire();
   },
   // 生命周期函数--监听页面显示
@@ -35,77 +31,56 @@ Page({
       title: '加载中',
       mask: true,
     });
-    console.log(this.data.searchData);
-    let year = this.data.searchData.year;
-    let city = this.data.searchData.city;
-    let xueli = this.data.searchData.xueli;
-    let zhuanye = this.data.searchData.zhuanye;
-
-    this.getSearchData()
+    this.getSearchData();
   },
 
   getSearchData() {
-
+    const that = this;
+    const searchdata = that.data.searchData;
+    console.log(searchdata);
     wx.request({
       url: 'https://zg99.offcn.com/index/chaxun/getlist/?actid=39078&callback=?',
-      data: this.data.searchData,
+      data: {
+        year: searchdata.year,
+        dw_name:searchdata.city,
+        zhuanye:'',
+        timestemp: new Date().getTime(),
+        limits:'200'
+      },
       success: res => {
-        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
-        console.log(data);
+        const data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        wx.showToast({
+          title: data.msg,
+          icon: 'success',
+          duration: 2000,
+        });
         if (data.status == 1) {
-          wx.hideLoading();
-          wx.showToast({
-            title: data.msg,
-            icon: 'success',
-            duration: 1000,
-          })
-          data.lists.forEach(el => {
-            el.isOpen = false;
+          // console.log(data.lists);
+          const new_array = data.lists.filter( item => {
+            return (item.zhuanye =="不限"||item.zhuanye.includes(searchdata.zhuanye));
+        });
+        console.log(new_array);
+          that.setData({
+            search_result: new_array,
           });
-          this.setData({
-            search_result: data.lists,
-          })
-          // wx.stopPullDownRefresh();
-          // console.log(data.lists[0]);
+
+          if(new_array.length == 0){
+              wx.showToast({
+                title: '无符合报考岗位,显示不限专业职位',
+                icon: 'none',
+                duration: 5000
+              });
+              that.setData({
+                searchData: {
+                  'year': '',
+                  'xueli': '',
+                  'zhuanye': ''
+                }
+              });
+              that.getSearchData();
+          };
+
         } else {
-          // wx.hideLoading();
-
-          // setTimeout(function () {
-          //   wx.navigateBack({
-          //     delta: 1,
-          //   })
-          // }, 1000);
-
-
-          if (data.msg == '暂无数据') {
-
-            wx.showLoading({
-              title: '加载中',
-              mask: true,
-            });
-            wx.showToast({
-              title: '无符合报考岗位,显示不限专业职位',
-              icon: 'none',
-              duration: 2000
-            })
-
-
-            // let xs = this.data.searchData.xs;
-            // let xueli = this.data.searchData.xlyq;
-            // let zwcc = this.data.searchData.zw;
-            // let zhuanye = this.data.searchData.zy;
-
-            this.setData({
-              searchData: {
-                'xs': "",
-                'zdxl': "",
-                'zhuanye': "",
-                limits: 500
-              }
-            })
-            this.getSearchData()
-
-          } else {
             wx.showToast({
               title: data.msg,
               icon: 'none',
@@ -116,14 +91,11 @@ Page({
                 delta: 1,
               })
             }, 1000);
-          }
-
         }
       }
     })
   },
-
-})
+});
 
 
 var time_include = function (item, target) {

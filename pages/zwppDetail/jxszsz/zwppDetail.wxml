@@ -15,9 +15,6 @@
 				<view class="flex_a_c zgzs">计划数:{{item.jhs}}</view>
 				<view class="flex_a_c zgzs">政治面貌：{{item.zzmm}}</view>
 			</view>
-			<view class="item_row">
-				<view class="flex_a_c zgzs">学位：{{item.xuewei}}</view>
-			</view>
       <view class="item_row">
 				<view class="flex_a_c zgzs">专业：{{item.zhuanye}}</view>
 			</view>

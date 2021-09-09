@@ -7,6 +7,10 @@
     <!-- <button bindtap="ChooseKaoshi" data-entrance='yn'>云南</button> -->
     <!-- <button bindtap="ChooseKaoshi" data-entrance='hb'>河北</button> -->
     <button bindtap="ChooseKaoshi" data-entrance='zylx'>中央遴选</button>
+    <button bindtap="ChooseKaoshi" data-entrance='sc'>四川</button>
+    <button bindtap="ChooseKaoshi" data-entrance='hn'>湖南</button>
+    <button bindtap="ChooseKaoshi" data-entrance='tj'>天津</button>
+    <button bindtap="ChooseKaoshi" data-entrance='nx'>宁夏</button>
     <button bindtap="ChooseKaoshi" data-entrance='nm'>内蒙古</button>
     <button bindtap="ChooseKaoshi" data-entrance='xz'>西藏</button>
     <button bindtap="ChooseKaoshi" data-entrance='js'>江苏</button>
@@ -21,9 +25,7 @@
     <button bindtap="ChooseKaoshi" data-entrance='jl'>吉林</button>
     <button bindtap="ChooseKaoshi" data-entrance='sh'>上海</button>
     <button bindtap="ChooseKaoshi" data-entrance='ah'>安徽</button>
-    <button bindtap="ChooseKaoshi" data-entrance='hn'>湖南</button>
     <button bindtap="ChooseKaoshi" data-entrance='sd'>山东</button>
-    <button bindtap="ChooseKaoshi" data-entrance='sc'>四川</button>
     <button bindtap="ChooseKaoshi" data-entrance='hu'>湖北</button>
     <button bindtap="ChooseKaoshi" data-entrance='gz'>贵州</button>
     <button bindtap="ChooseKaoshi" data-entrance='bj'>北京</button>

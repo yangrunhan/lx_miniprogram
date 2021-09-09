@@ -178,7 +178,15 @@ Page({
       wx.navigateTo({
         url: '/pages/kaoshi/nm/nm', //内蒙古
       })
-    } else {
+    } else if (entrance == 'nx') { //宁夏
+      wx.navigateTo({
+        url: '/pages/kaoshi/nx/nx', //宁夏
+      })
+    } else if (entrance == 'tj') { //天津
+      wx.navigateTo({
+        url: '/pages/kaoshi/tj/tj', //天津
+      })
+    }else {
       wx.navigateTo({
         url: '/pages/kaoshi/' + entrance + '/' + entrance,
       })

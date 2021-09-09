@@ -6,9 +6,9 @@ page {
 
 .title-image {
   display: block;
-  width: 683rpx;
-  height: 248rpx;
-  margin-left: 48rpx;
+  width: 721rpx;
+  height: 178rpx;
+  margin-left: 22rpx;
 }
 
 .small-title {

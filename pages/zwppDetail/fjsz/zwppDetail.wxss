@@ -43,7 +43,7 @@
 
 .list .item {
   margin-top: 34rpx;
-  padding: 31rpx 25rpx 0 36rpx;
+  padding: 0rpx 20rpx 0rpx;
   position: relative;
   width: 690rpx;
   font-size: 26rpx;

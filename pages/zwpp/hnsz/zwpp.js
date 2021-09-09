@@ -59,7 +59,6 @@ Page({
       mask: true,
     });
 
-
     let xs;
     if (e.detail.value.xs == 0) {
       xs = "";

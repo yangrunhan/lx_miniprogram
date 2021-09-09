@@ -20,7 +20,8 @@
 					<view class="arrow"></view>
 				</view>
 			</picker>
-      <!-- 选择城市 -->
+
+      <!-- 选择单位 -->
 			<picker name="city" bindchange="cityChange" range="{{cityArr}}" value="{{cityIndex}}">
 				<view class="section">
 					<view class="section_icon_1"></view>
@@ -30,6 +31,7 @@
 					<view class="arrow"></view>
 				</view>
 			</picker>
+
       <!-- 选择学历 -->
 			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
 				<view class="section">

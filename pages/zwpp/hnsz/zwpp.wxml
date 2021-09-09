@@ -13,7 +13,7 @@
 	</view>
 	<view class="form_ctn">
 		<form bindsubmit="inquireBtn">
-			
+
 			<!-- 选择年份 -->
 			<picker name="xs" bindchange="xsChange" range="{{xsArr}}" value="{{xsIndex}}">
 				<view class="section">
@@ -24,6 +24,7 @@
 					<view class="arrow"></view>
 				</view>
 			</picker>
+
       <!-- 选择学历 -->
 			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
 				<view class="section">

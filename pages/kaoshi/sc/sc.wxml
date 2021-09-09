@@ -2,6 +2,7 @@
 <view class="kaoshi">
   <view class="title">请选择考试</view>
   <view>
+    <button style="width:100%;" bindtap="toNextPage" data-entrance='scshizhi'>四川市直遴选</button>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='scsz'>四川省直机关遴选</button>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='scdzsz'>四川省达州市直机关遴选</button>
     <button style="width:100%;" bindtap="toNextPage" data-entrance='scdzxbld'>四川省达州市选拔领导干部</button>

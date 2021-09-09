@@ -15,6 +15,13 @@ Page({
     isHiddenLoginAuthModal: true,
     isHiddenPhoneAuthModal: true,
     isShowLoginModal: false,
+    crm_data:{
+      sid:"791725ccb0dcfbedf58696c9607a17be",
+      owner:"13272",
+      channel:"117",
+      orgn:"1",
+      mobile:"18600000001",
+    }
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
@@ -22,6 +29,13 @@ Page({
     wx.setStorageSync('entrance', 'hnsz');
     app.editTabbar();
     this.getIndexPageData();
+
+    if(options.crm_data){
+      this.setData({
+        crm_data: JSON.parse(options.crm_data),
+      });
+    }
+
   },
   // 生命周期函数--监听页面显示
   onShow: function () { },
@@ -231,7 +245,18 @@ Page({
           _this.setData({
             isShowLoginModal: false,
             isHiddenPhoneAuthModal: true,
-          })
+          });
+
+          // 在crm中注册
+          let crm_data = _this.data.crm_data;
+          console.log(crm_data);
+          crm_data.mobile = _this.data.userPhone;
+          // crm_data.mobile = "18600000006"
+          console.log(crm_data);
+          CONFIG.tijiao_crm(crm_data,function(res){
+            console.log(res);
+          });
+
           wx.showToast({
             title: "手机号绑定成功！",
             icon: 'none',

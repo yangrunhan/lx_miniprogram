@@ -1,6 +1,3 @@
-// pages/home/hu/husz/home.js
-
-
 const CONFIG = require('../../../../config');
 const app = getApp();
 
@@ -14,16 +11,29 @@ Page({
     isHiddenLoginAuthModal: true,
     isHiddenPhoneAuthModal: true,
     isShowLoginModal: false,
+
+    company_name:"通用",
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
+
     wx.setStorageSync('entrance', 'husz');
     app.editTabbar();
     this.getIndexPageData();
+
+    if(options){
+
+      if(options.fxname){
+        this.setData({
+          company_name:options.fxname
+        })
+      }
+
+    }
+
   },
   // 生命周期函数--监听页面显示
   onShow: function () { },
-
 
   //跳转职位检索事件 
   toNextpage(e) {
@@ -47,7 +57,7 @@ Page({
       wx.navigateTo({
         url: '/pages/zwpp/husz/zwpp',
       })
-    }
+    };
 
   },
 
@@ -59,6 +69,7 @@ Page({
       url: CONFIG.getIndexPageDataAPI,
       data: {
         sort: wx.getStorageSync('entrance'),
+        timestemp:new Date().getTime()
       },
       success: res => {
         var str = res.data.substring(1, res.data.length - 1);
@@ -206,8 +217,13 @@ Page({
     let data = {};
     data.phone = this.data.userPhone;
 
-    data.entrance_1 = '湖北省直机关遴选考试';
-    data.entrance_2 = '职位检索';
+    data.entrance_1 = '2020湖北省直遴选';
+
+    if(wx.getStorageSync('entrance_gn') == 'zwpp'){
+      data.entrance_2 = '职位检索';
+    }else if(wx.getStorageSync('entrance_gn') == 'lnfs'){
+      data.entrance_2 = '历年分数线';
+    }
 
     if (wx.getStorageSync('urlParams').area && wx.getStorageSync('urlParams').area !== undefined) {
       data.city_or_school = wx.getStorageSync('urlParams').area;
@@ -215,7 +231,6 @@ Page({
     if (wx.getStorageSync('urlParams').scode && wx.getStorageSync('urlParams').scode !== undefined) {
       data.scode = wx.getStorageSync('urlParams').scode;
     }
-    console.log(data);
     // 注册
     wx.request({
       url: CONFIG.RegisterAPI,
@@ -245,6 +260,40 @@ Page({
             icon: 'none',
             duration: 1000
           })
+        }
+      }
+    })
+    // 单独表
+    data.company_name = this.data.company_name
+
+    wx.request({
+      url: CONFIG.RegisterAPI2+"40821",
+      data: data,
+      success: res => {
+        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        console.log(data);
+        if (data.status == 1) {
+          // app.globalData.userPhone = _this.data.userPhone;
+          // wx.setStorageSync('userPhone', _this.data.userPhone);
+          // _this.setData({
+          //   isShowLoginModal: false,
+          //   isHiddenPhoneAuthModal: true,
+          // })
+          // wx.showToast({
+          //   title: "手机号绑定成功！",
+          //   icon: 'none',
+          //   duration: 1000
+          // })
+          // wx.switchTab({
+          //   url: '/pages/zwpp/ynkmgdxz/zwpp',
+          //   // url: '/pages/home/home',
+          // })
+        } else {
+          // wx.showToast({
+          //   title: data.msg,
+          //   icon: 'none',
+          //   duration: 1000
+          // })
         }
       }
     })

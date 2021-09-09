@@ -18,6 +18,29 @@
 					<view class="arrow"></view>
 				</view>
 			</picker>
+
+			<!-- 选择单位性质 -->
+			<picker name="dwxz" bindchange="dwxzChange" range="{{dwxzArr}}" value="{{dwxzIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{dwxzArr[dwxzIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
+				<!-- 政治面貌 -->
+				<picker name="zzmm" bindchange="zzmmChange" range="{{zzmmArr}}" value="{{zzmmIndex}}">
+				<view class="section">
+					<view class="section_icon_1"></view>
+					<view class="picker">
+						{{zzmmArr[zzmmIndex]}}
+					</view>
+					<view class="arrow"></view>
+				</view>
+			</picker>
+
 			<!-- 选择学历 -->
 			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
 				<view class="section">

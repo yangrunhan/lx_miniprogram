@@ -1,25 +1,26 @@
-<!--pages/zwpp/husz/zwpp.wxml-->
+<!--pages/zwpp/ynszlx2/zwpp.wxml-->
+
 
 <view>
 	<view class="top">
-		<view class="top_title_1">北京市市级机关遴选考试</view>
-		<view class="top_title_2">职位匹配查询</view>
+		<view class="top_title_1">2020湖北省直机关遴选考试</view>
+		<view class="top_title_2">职位匹配</view>
 		<view class="progress"></view>
 	</view>
 	<view class="form_ctn">
 		<form bindsubmit="inquireBtn">
 			
-			<!-- 选择年份 -->
-			<picker name="year" bindchange="yearChange" range="{{yearArr}}" value="{{yearIndex}}">
+			<!-- 选择单位 -->
+			<picker name="danwei" bindchange="danweiChange" range="{{danweiArr}}" value="{{danweiIndex}}">
 				<view class="section">
 					<view class="section_icon_1"></view>
 					<view class="picker">
-						{{yearArr[yearIndex]}}
+						{{danweiArr[danweiIndex]}}
 					</view>
 					<view class="arrow"></view>
 				</view>
 			</picker>
-			<!-- 选择学历 -->
+      <!-- 选择学历 -->
 			<picker name="xueli" bindchange="xueliChange" range="{{xueliArr}}" value="{{xueliIndex}}">
 				<view class="section">
 					<view class="section_icon_1"></view>
@@ -29,12 +30,12 @@
 					<view class="arrow"></view>
 				</view>
 			</picker>
-			<input name='zhuanye' bindinput="zhuanyeInput" class="section" placeholder='请输入专业'></input>
+			
+			<input name='zhuanye' bindinput="zhuanyeInput" class="section" placeholder='*不限专业可不填写'></input>
 			<!-- 立即查询 -->
 			<button class="inquire_btn" form-type="submit">立即查询</button>
 		</form>
 	</view>
 </view>	
-
 
 

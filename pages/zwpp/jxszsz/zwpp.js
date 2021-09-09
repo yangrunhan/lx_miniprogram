@@ -6,11 +6,12 @@ const CONFIG = require('../../../config');
 
 Page({
   data: {
-    isUnlimited: false,
-    yearsIndex: 0,
-    yearsArr: [],
+
+    // 年份
+    yearIndex: 0,
+    yearArr: [],
     cityIndex: 0,
-    cityArr: ['遴选地区', '省直'],
+    cityArr: ['请选择单位'],
     xueliIndex: 0,
     xueliArr: [],
     leixingIndex: 0,
@@ -20,35 +21,102 @@ Page({
     danweiIndex: 0,
     gangweiArr: [],
     gangweiIndex: 0,
-    yearArr: ['年份', '2016', '2017', '2019', '不限'],
-    yearIndex: 0,
     xueliArr: ['学历', '研究生', '本科'],
     xueliIndex: 0,
     zhuanye: '',
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
+    this.getyearlist();
+  },
+
+  // 获取年份列表
+  getyearlist:function(){
+    let that = this
+    wx.request({
+      url: 'https://zg99.offcn.com/index/chaxun/getlevel',
+      data:{
+        "actid":39078,
+        "level":"1",
+        "grfiled":"",
+        "grtext":"",
+        "itemstamp":new Date().getTime()
+      },
+      success:res=>{
+        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        // console.log(data);
+        let yearArr = ["请选择年份"];
+        if(data.status == 1){
+          data.lists.map((item)=>{
+            yearArr.push(item.year);
+          })
+          that.setData({
+            yearArr:yearArr
+          })
+          
+        }else{
+          wx.showToast({
+            title: '数据加载出问题，请关闭后重试',
+            icon: "none"
+          })
+        }
+      }
+    })
 
   },
+
+    // 获取单位列表
+    getdanweilist:function(year){
+      let that = this
+      wx.request({
+        url: 'https://zg99.offcn.com/index/chaxun/getlevel',
+        data:{
+          "actid":39078,
+          "level":"2",
+          "grfiled":"year",
+          "grtext":year,
+          "itemstamp":new Date().getTime()
+        },
+        success:res=>{
+          var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+          let danweiArr = ["请选择单位"]
+          if(data.status == 1){
+            data.lists.map((item)=>{
+              danweiArr.push(item.dw_name)
+            })
+            that.setData({
+              cityArr:danweiArr
+            })
+            
+          }else{
+            wx.showToast({
+              title: '数据加载出问题，请关闭后重试',
+              icon: "none"
+            })
+          }
+        }
+      })
+  
+    },
+
   // 生命周期函数--监听页面显示
   onShow: function () {},
 
-  //选调形式
+  //选择年份
   yearChange(e) {
     this.setData({
       yearIndex: e.detail.value,
-    })
+    });
+    this.getdanweilist(this.data.yearArr[this.data.yearIndex]);
   },
-  //选择城市
+  //选择单位
   cityChange(e) {
-    // console.log(e.detail.value)
     this.setData({
       cityIndex: e.detail.value,
     })
   },
   //选择学历
   xueliChange(e) {
-    // console.log(e.detail.value)
     this.setData({
       xueliIndex: e.detail.value,
     })
@@ -94,7 +162,7 @@ Page({
     });
     console.log(searchData);
 
-    if (!year && !city && !xueli) {
+    if (!this.data.yearIndex && !this.data.cityIndex && !this.data.xueliIndex) {
       wx.showModal({
         title: '提示',
         content: '请选择查询条件',

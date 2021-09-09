@@ -7,12 +7,12 @@
 
 	<!-- <view class="logo"></view> -->
 	<view class="app_title">
-		<text>2020福建省省直遴选考试</text>
+		<text>福建省省直遴选考试</text>
 	</view>
 	<view class="main">
 		<!-- 职位匹配 -->
 		<view class="match" bindtap="toNextpage" data-topage='zwjs' style="background-image: url({{backgroundImage.features_1}});" hover-class="none">
-      <view class='zwjs_title'>2020福建省省直遴选</view>
+      <view class='zwjs_title'>福建省省直遴选</view>
       <view class='zwjs_name'>职位检索</view>
     </view>
 	</view>

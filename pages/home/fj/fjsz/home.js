@@ -1,5 +1,3 @@
-// pages/home/gs/gssz/home.js
-// pages/home/home.js
 const CONFIG = require('../../../../config');
 const app = getApp();
 
@@ -13,38 +11,29 @@ Page({
     isHiddenLoginAuthModal: true,
     isHiddenPhoneAuthModal: true,
     isShowLoginModal: false,
+
+    company_name:"通用",
   },
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
+
+    wx.setStorageSync('entrance', 'fjsz');
     app.editTabbar();
     this.getIndexPageData();
 
-    
-    // 获取参数
-    console.log(options);
-    if (Object.keys(options).length !== 0) {
+    if(options){
 
-      console.log(options.fxid);
-      if (options.fxid) {
-        wx.setStorageSync('fxid', options.fxid);
-        app.getTuiguangInfo();
-      }
-      console.log(options.area);
-      if (options.area) {
-        wx.setStorageSync('tg_area', options.area);
-      }
-      if (options.fxname) {
-        wx.setStorageSync('tgfxinfo', options.fxname);
+      if(options.fxname){
+        this.setData({
+          company_name:options.fxname
+        })
       }
 
     }
-    console.log(wx.getStorageSync('tg_area'));
-    console.log(wx.getStorageSync('fxid'));
 
   },
   // 生命周期函数--监听页面显示
   onShow: function () { },
-
 
   //跳转职位检索事件 
   toNextpage(e) {
@@ -68,25 +57,25 @@ Page({
       wx.navigateTo({
         url: '/pages/zwpp/fjsz/zwpp',
       })
-    }
-    
+    };
+
   },
 
   // 获取首页功能区 背景图URL
   getIndexPageData() {
-    console.log(CONFIG.getIndexPageDataAPI);
+    // console.log(CONFIG.getIndexPageDataAPI);
     console.log(wx.getStorageSync('entrance'));
     wx.request({
       url: CONFIG.getIndexPageDataAPI,
       data: {
         sort: wx.getStorageSync('entrance'),
+        timestemp:new Date().getTime()
       },
       success: res => {
         var str = res.data.substring(1, res.data.length - 1);
         str = str.replace(/\ +/g, "");//去掉空格
         str = str.replace(/[\r\n]/g, "");//去掉回车换行
         // console.log(str);
-        // console.log(typeof(str));
         var data = JSON.parse(str);
         if (data.status == 1) {
           // var ads = JSON.parse(data.lists[0].ad_1);  //广告先去掉
@@ -222,22 +211,18 @@ Page({
   },
   // 将手机号提交到后台
   Register() {
-
-    let tgfxinfo = wx.getStorageSync('tgfxinfo')
-    let scode = wx.getStorageSync('tg_area')
-    console.log(tgfxinfo)
-
-
     let _this = this;
     let entrance = wx.getStorageSync('entrance');
     let data = {};
     data.phone = this.data.userPhone;
 
+    data.entrance_1 = '福建省直遴选职位检索';
 
-    data.entrance_1 = '福建省直机关遴选';
-    data.entrance_2 = '职位检索';
-    data.city_or_school = tgfxinfo;
-    data.scode = scode;
+    if(wx.getStorageSync('entrance_gn') == 'zwpp'){
+      data.entrance_2 = '职位检索';
+    }else if(wx.getStorageSync('entrance_gn') == 'lnfs'){
+      data.entrance_2 = '历年分数线';
+    }
 
     if (wx.getStorageSync('urlParams').area && wx.getStorageSync('urlParams').area !== undefined) {
       data.city_or_school = wx.getStorageSync('urlParams').area;
@@ -257,6 +242,7 @@ Page({
           wx.setStorageSync('userPhone', _this.data.userPhone);
           _this.setData({
             isShowLoginModal: false,
+            isHiddenPhoneAuthModal: true,
           })
           wx.showToast({
             title: "手机号绑定成功！",
@@ -265,7 +251,6 @@ Page({
           })
           wx.switchTab({
             url: '/pages/zwpp/fjsz/zwpp',
-            // url: '/pages/home/home',
           })
         } else {
           wx.showToast({
@@ -273,6 +258,22 @@ Page({
             icon: 'none',
             duration: 1000
           })
+        }
+      }
+    })
+    // 单独表
+    data.company_name = this.data.company_name
+
+    wx.request({
+      url: CONFIG.RegisterAPI2+"42236",
+      data: data,
+      success: res => {
+        var data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+        console.log(data);
+        if (data.status == 1) {
+
+        } else {
+
         }
       }
     })

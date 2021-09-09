@@ -1,17 +1,18 @@
-<!--pages/home/hu/husz/home.wxml-->
+<!--pages/home/yn/ynszlx2/home.wxml-->
+
 
 <view class="layout">
 	<navigator class="toIndex" open-type="reLaunch" url="/pages/index/index" hover-class="none"></navigator>
 
 	<!-- <view class="logo"></view> -->
 	<view class="app_title">
-		<text>2020湖北省直机关遴选考试</text>
+		<text>2020湖北省直遴选</text>
 	</view>
 	<view class="main">
-		<!-- 职位匹配 -->
-		<view class="match" bindtap="toNextpage" data-topage='zwjs' style="background-image: url({{backgroundImage.features_1}});" hover-class="none">
-      <view class='zwjs_title'>2020湖北省直级机关遴选考试</view>
-      <view class='zwjs_name'>职位检索</view>
+		<!-- 职位检索 -->
+		<view class="match" bindtap="toNextpage" data-topage='zwpp' style="background-image: url({{backgroundImage.features_1}});" hover-class="none">
+      <view class='zwjs_title'>2020湖北省直遴选</view>
+      <view class='zwjs_name'>职位检索查询</view>
     </view>
 	</view>
 </view>
@@ -43,7 +44,3 @@
 </view>
 <!-- tabbar -->
 <customTabbar tabbar="{{tabbar}}" />
-
-
-
-

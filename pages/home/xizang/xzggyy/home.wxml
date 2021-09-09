@@ -1,7 +1,7 @@
 <!--pages/zwpp/ahszsz/zwpp.wxml-->
 
 <image src="//www.zglinxuan.com/zt/to_mini/img/banner_title_xz.png" mode="aspectFit" class="title-image"></image>
-<text class="small-title">公告发布后，第一时间电话/短信通知您!</text>
+<text class="small-title">笔试发布后，第一时间电话/短信通知您!</text>
 
 <view class="form_ctn">
 

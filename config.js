@@ -56,6 +56,29 @@ const getRmfsxResultAPI = `${BASE_URL}/chaxun/getlist?actid=2218&callback=?`;
 // 获取 专业目录 查询结果
 const getProfessionalDirectoryEnquiryResultAPI = `${BASE_URL}/chaxun/getjlinfo/?actid=5441&callback=?`;
 
+// 提交crm
+function tijiao_crm(data,callback){
+  wx.request({
+    url: 'https://dc.offcn.com:8443/a.gif',
+    data: data,
+    success: res=>{
+      // let data = JSON.parse(res.data.replace(/^(\s|\()+|(\s|\))+$/g, ''));
+      // console.log(res.data.status)
+      callback(res)
+    }
+  })
+};
+
+function getQueryVariable(variable,uri){
+  let query = uri.split("?")[1];
+  let vars = query.split("&");
+  for (let i=0;i<vars.length;i++) {
+    let pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+
 module.exports = {
   getSesionkeyAPI,
   getUserPhoneAPI,
@@ -75,5 +98,7 @@ module.exports = {
   getCxjlDataAPI,
   ChaxunGetListApi,
   getSharePageSetDataAPI,
-  writelogsAPI
+  writelogsAPI,
+  tijiao_crm,
+  getQueryVariable
 }
